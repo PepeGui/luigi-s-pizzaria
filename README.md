@@ -10,13 +10,10 @@ Prototipo:
 Landing Page
 ![Tela Landing Page](images/landPage1.png)
 
-Landing Page
 ![Tela Landing Page](images/LandPage2.png)
 
-Landing Page
 ![Tela Landing Page](images/LandPage3.png)
 
-Landing Page
 ![Tela Landing Page](images/LandPage4.png)
 
 Tela do Carrinho

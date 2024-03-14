@@ -7,6 +7,15 @@ MER
 
 Prototipo:
 
+Landing Page
+![Tela Landing Page](images/landPage1.png)
+
+![Tela Landing Page](images/LandPage2.png)
+
+![Tela Landing Page](images/LandPage3.png)
+
+![Tela Landing Page](images/LandPage4.png)
+
 Tela do Carrinho
 ![Tela Carrinho](images/Carrinho.png)
 

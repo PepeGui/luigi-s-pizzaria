@@ -12,3 +12,30 @@ Tela de Confirmação de Compra
 
 Tela de Pagamento
 ![Tela Pagamento](images/Pagamento.png)
+
+Tela de Login do Administrador
+![Tela Login](images/Login.png)
+
+Tela de Menu do Administrador
+![Tela Menu](images/Menu.png)
+
+Tela de Gerenciamento do Pedido
+![Tela Gerenciamento do Pedido](images/Gerenciar_Pedido.png)
+
+Tela de Estoque
+![Tela Estoque](images/Estoque.png)
+
+Tela de Editar Ingrediente
+![Tela Editar Ingrediente](images/Editar_Ingrediente.png)
+
+Tela de Adicionar Ingrediente
+![Tela Adicionar Ingrediente](images/Adicionar_Ingrediente.png)
+
+Tela de Gerenciar Cardapio
+![Tela Gerenciar Cardapio](images/Gerenciar_Cardapio.png)
+
+Tela de Editar Pizza
+![Tela Editar Pizza](images/Editar_Pizza.png)
+
+Tela de Adicionar Pizza
+![Tela Adicionar Pizza](images/Adicionar_Pizza.png)

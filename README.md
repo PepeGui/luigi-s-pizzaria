@@ -1,3 +1,4 @@
+![caso de uso projeto integrador](https://github.com/Guilherme-Kaua-Silva/PI-Pizzaria/assets/145074550/6f353738-3d1f-4125-8d1f-0833f286a7d6)
 # PI-Pizzaria
 MER
 ![Captura de tela 2024-03-08 220324](https://github.com/Guilherme-Kaua-Silva/PI-Pizzaria/assets/145725352/341816d8-09f2-417a-a1ce-681a19e5a724)

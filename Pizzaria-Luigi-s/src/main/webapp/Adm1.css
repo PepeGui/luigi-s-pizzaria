@@ -1,0 +1,98 @@
+*{
+    border: green 1px solid;
+}
+
+body {
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+
+}
+
+.cabecalho {
+display: flex;
+flex-direction: column;
+justify-content: center;
+
+
+}
+
+.cabecalho > h1 {
+    font-family: 'Irish Grover'; font-size: 30px;
+}
+
+.cabecalho > h1 h2{
+margin: ;
+}
+
+#luigis {
+
+    width : 530px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 80px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
+}
+
+#luigis h1 {
+    text-align: left;
+    color: white;
+    background-color: red;
+
+
+}
+
+#luigis h2 {
+
+    text-align: left;
+    background-color: black;
+    color: white;
+}
+
+#luigis img {
+    max-width: 100%;
+}
+
+#luigis h3 {
+    text-align: center;
+    background-color: 000000;
+}
+
+#luigis h4 {
+    text-align: center;
+    color: white;
+    background-color: red;
+}
+
+#luigis form {
+    margin-top: 20px;
+}
+
+#luigis label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+#luigis input[type="text"], #luigis input[type="password"] {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#luigis input[type="submit"] {
+    width: 100%;
+    padding: 5px;
+    background-color: #0066cc;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#luigis input[type="submit"]:hover {
+    background-color: #0055a0;
+}

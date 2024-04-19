@@ -1,0 +1,17 @@
+* {
+    border: green 1px solid;
+}
+
+body {
+    background-color: #D7D7D7;
+    margin: 0px;
+}
+
+.cabecalho{
+    display: flex;
+    flex-direction: column:
+}
+.cabecalho-baixo{
+    display: flex;
+    flex-direction: row;
+}

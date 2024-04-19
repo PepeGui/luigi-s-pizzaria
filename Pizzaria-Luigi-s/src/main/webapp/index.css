@@ -7,11 +7,24 @@ body {
     margin: 0px;
 }
 
+.texto-branco{
+    color: white;
+}
+
 .cabecalho{
     display: flex;
-    flex-direction: column:
+    flex-direction: column;
+    justify-content: space-between;
+    height: 124px;
+    background-color: #CC0101;
 }
+cabecalho > h2{
+    font-size: 32px;
+}
+
 .cabecalho-baixo{
     display: flex;
     flex-direction: row;
+    background-color: #A91C1C;
 }
+

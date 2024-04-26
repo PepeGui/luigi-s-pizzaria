@@ -20,6 +20,7 @@ body {
 }
 cabecalho > h2{
     font-size: 32px;
+
 }
 
 .cabecalho-baixo{
@@ -41,12 +42,36 @@ cabecalho > h2{
     flex-direction: column;
     justify-content: center;
     align-items:center;
-    background-image: url("../images/pizzaria.png");
+    background-image: url("./images/pizzaria.png");
 }
 
-.introducao > div{
-    width:
-
+.introducao > p{
+    width: 80%;
 }
+
+.como-fazemos{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 80vh;
+}
+.como-fazemos > img{
+    width: 40vw;
+}
+.como-fazemos > div{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    
+    width: 50vw;
+}
+.como-fazemos > div > p{
+    width: 40vw;
+}
+
+
+
 
 

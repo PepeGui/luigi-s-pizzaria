@@ -1,0 +1,88 @@
+create database LuigisPizza
+
+CREATE TABLE Cliente (
+    ClienteID INT PRIMARY KEY,
+    Nome VARCHAR(50),
+    CPF VARCHAR(11),
+    Telefone VARCHAR(12),
+    Endereco VARCHAR(50),
+    Numero INT,
+    CEP VARCHAR(10)
+);
+
+INSERT INTO Cliente (ClienteID, Nome, CPF, Telefone, Endereco, Numero, CEP)
+VALUES (068, 'ROBSON', '12345678910', '(11) 98736-6621', 'AV Santo Amaro', 25, '01234567');
+-------------------------------------------------------------------------------------------
+CREATE TABLE Pedido (
+    PedidoID INT PRIMARY KEY,
+    ClienteID INT,
+    DataPedido DATE,
+    FOREIGN KEY (ClienteID) REFERENCES Cliente(ClienteID)
+);
+
+
+INSERT INTO Pedido (PedidoID, ClienteID, DataPedido)
+VALUES (068, 01, '16/09/2024');
+
+-------------------------------------------------------------
+create table ItemPedido (
+    ItemID INT PRIMARY KEY,
+    PedidoID INT,
+    NomeProduto VARCHAR(50),
+    Quantidade INT,
+    FOREIGN KEY (PedidoID) REFERENCES Pedido(PedidoID)
+);
+
+INSERT INTO ItemPedido (ItemID, PedidoID, NomeProduto, Quantidade)
+VALUES (01, 01, 'Pizza de Pepperoni', 01),
+       (02, 01, 'Pizza de Calabresa', 01),
+       (03, 01, 'Coca 2L', 01);
+
+---------------------------------------------------------------------------
+create table Usuarios (
+    ID int NOT NULL AUTO_INCREMENT,
+    NomeUsuario varchar(50) NOT NULL,
+    Senha varchar(50) NOT NULL,
+    PRIMARY KEY (ID)
+);
+
+INSERT INTO Usuarios (NomeUsuario, Senha) VALUES ('Roberto', 'pizza_legal');
+
+SELECT * FROM Usuarios WHERE NomeUsuario = 'nome_inserido' AND Senha = 'senha_inserida';
+--------------------------------------------------------------------------------------------
+
+create table Carrinho (
+    IDPedido INT,
+    FormaPagamento VARCHAR(50),
+    FOREIGN KEY (IDPedido) REFERENCES Pedido(IDPedido)
+);
+-------------------------------------
+create table Pizza (
+    IDPizza INT PRIMARY KEY,
+    Nome VARCHAR(50),
+    Preco float,
+    Descricao VARCHAR(400)
+);
+---------------------------------
+create table Bebida (
+   IDBebida INT PRIMARY KEY,
+   Preco float,
+   Descricao VARCHAR(400)
+);
+--------------------------------------
+create table Ingrediente (
+   IDIngrediente INT PRIMARY KEY,
+   Nome VARCHAR(50),
+   QuantidadeEstoque INT,
+   UnidadeMedida int
+);
+-------------------------------------
+create table Estoque (
+  IDEstoque INT PRIMARY KEY,
+  IDIngrediente INT,
+  Quantidade INT,
+  DataAtualizacao DATE,
+  FOREIGN KEY (IDIngrediente) REFERENCES Ingrediente(IDIngrediente)
+
+);
+.

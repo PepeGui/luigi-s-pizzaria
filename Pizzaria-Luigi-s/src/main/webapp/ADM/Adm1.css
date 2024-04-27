@@ -1,5 +1,5 @@
 *{
-    border: green 1px solid;
+    border: green 1px solid !important;
 }
 
 body {
@@ -27,60 +27,76 @@ justify-content: center;
 }
 
 .cabecalho > h1 h2{
-margin: ;
+    margin: ;
 }
 
 
+.login {
+display: flex;
+flex-direction: column;
+justify-content: center;
+height: 45vh;
+width: 50vw;
 
-#luigis h1 {
+}
+ h1 {
     text-align: left;
     color: white;
     background-color: red;
-
-
+    width: 1354px;
+    height: 72px;
 }
 
-#luigis h2 {
+ h2 {
 
     text-align: left;
     background-color: black;
     color: white;
+    width: 1354px;
+    height: 34
 }
 
-#luigis img {
-    width: 917px;
+ img {
+    width: 1354px;
+    height: 177px;
 }
 
-#luigis h3 {
+ h3 {
     text-align: center;
     background-color: 000000;
 }
 
-#luigis h4 {
-    text-align: center;
+ h4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     color: white;
     background-color: red;
+    width: 811px;
+    height: 47px;
+
 }
 
-#luigis form {
+ form {
     margin-top: 20px;
 }
 
-#luigis label {
+ label {
     display: block;
     margin-bottom: 5px;
     color: #333;
 }
 
-#luigis input[type="text"], #luigis input[type="password"] {
-    width: 100%;
+   input[type="text"],  input[type="password"] {
+    width: 45%;
     padding: 5px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
 
-#luigis input[type="submit"] {
+ input[type="submit"] {
     width: 100%;
     padding: 5px;
     background-color: #0066cc;
@@ -90,6 +106,10 @@ margin: ;
     cursor: pointer;
 }
 
-#luigis input[type="submit"]:hover {
+ input[type="submit"] {
+ display: flex;
+
+ justify-content: center;
+ width: 20vw;
     background-color: #0055a0;
 }

@@ -57,11 +57,26 @@ create table Carrinho (
     FOREIGN KEY (IDPedido) REFERENCES Pedido(IDPedido)
 );
 -------------------------------------
-create table Pizza (
-    IDPizza INT PRIMARY KEY,
+CREATE TABLE Pizza (
+    IDPizza INT PRIMARY KEY AUTO_INCREMENT,
     Nome VARCHAR(50),
-    Preco float,
+    Preco DOUBLE,
     Descricao VARCHAR(400)
+);
+--------------------------------------------
+CREATE TABLE Ingrediente (
+    IDIngrediente INT PRIMARY KEY AUTO_INCREMENT,
+    Nome VARCHAR(50),
+    QuantidadeEstoque INT,
+    UnidadeMedida INT
+);
+--------------------------------------------
+CREATE TABLE Pizza_Ingrediente (
+    IDPizza INT,
+    IDIngrediente INT,
+    PRIMARY KEY (IDPizza, IDIngrediente),
+    FOREIGN KEY (IDPizza) REFERENCES Pizza(IDPizza),
+    FOREIGN KEY (IDIngrediente) REFERENCES Ingrediente(IDIngrediente)
 );
 ---------------------------------
 create table Bebida (
@@ -69,13 +84,7 @@ create table Bebida (
    Preco float,
    Descricao VARCHAR(400)
 );
---------------------------------------
-create table Ingrediente (
-   IDIngrediente INT PRIMARY KEY,
-   Nome VARCHAR(50),
-   QuantidadeEstoque INT,
-   UnidadeMedida int
-);
+
 -------------------------------------
 create table Estoque (
   IDEstoque INT PRIMARY KEY,

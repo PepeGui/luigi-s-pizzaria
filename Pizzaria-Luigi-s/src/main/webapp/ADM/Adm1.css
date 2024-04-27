@@ -1,45 +1,37 @@
-*{
+* {
     border: green 1px solid !important;
 }
 
 body {
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     height: 100vh;
-
     background-color: #D7D7D7;
     font-family: Arial, sans-serif;
-
 }
 
 .cabecalho {
-display: flex;
-flex-direction: column;
-justify-content: center;
-
-
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .cabecalho > h1 {
-    font-family: 'Irish Grover'; font-size: 30px;
+    font-family: 'Irish Grover';
+    font-size: 30px;
 }
-
-.cabecalho > h1 h2{
-    margin: ;
-}
-
 
 .login {
-display: flex;
-flex-direction: column;
-justify-content: center;
-height: 45vh;
-width: 50vw;
-
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 45vh;
+    width: 50vw;
 }
- h1 {
+
+h1 {
     text-align: left;
     color: white;
     background-color: red;
@@ -47,48 +39,49 @@ width: 50vw;
     height: 72px;
 }
 
- h2 {
-
+h2 {
     text-align: left;
     background-color: black;
     color: white;
     width: 1354px;
-    height: 34
+    height: 34px;
 }
 
- img {
+img {
     width: 1354px;
     height: 177px;
 }
 
- h3 {
+h3 {
     text-align: center;
-    background-color: 000000;
+    background-color: #D7D7D7;
+
 }
 
- h4 {
+h4 {
     display: flex;
     justify-content: center;
     align-items: center;
-
     color: white;
     background-color: red;
     width: 811px;
     height: 47px;
-
 }
 
- form {
+form {
     margin-top: 20px;
 }
 
- label {
+label {
     display: block;
     margin-bottom: 5px;
     color: #333;
 }
 
-   input[type="text"],  input[type="password"] {
+.input {
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
     width: 45%;
     padding: 5px;
     margin-bottom: 10px;
@@ -96,20 +89,12 @@ width: 50vw;
     border-radius: 5px;
 }
 
- input[type="submit"] {
-    width: 100%;
+input[type="submit"] {
+    width: 20vw;
     padding: 5px;
-    background-color: #0066cc;
+    background-color: #0055a0; /* Mantive apenas uma definição */
     color: #fff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-}
-
- input[type="submit"] {
- display: flex;
-
- justify-content: center;
- width: 20vw;
-    background-color: #0055a0;
 }

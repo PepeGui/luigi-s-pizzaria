@@ -91,6 +91,7 @@ body {
     width: 160px:
 }
 .sobre-nos > p{
+    text-align: center;
     width: 80vw;
 }
 footer{

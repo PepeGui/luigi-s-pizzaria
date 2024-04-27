@@ -1,5 +1,5 @@
 * {
-    border: green 1px solid !important;
+    
 }
 
 body {
@@ -26,7 +26,8 @@ body {
 .login {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
+    align-items:center;
     height: 45vh;
     width: 50vw;
 }
@@ -69,7 +70,12 @@ h4 {
 }
 
 form {
-    margin-top: 20px;
+    display:flex;
+    flex-direction:column;
+    justify-content: space-around;
+    align-items: center;
+    height: 15vh;
+    margin: 20px;
 }
 
 label {
@@ -79,20 +85,20 @@ label {
 }
 
 .input {
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-    width: 45%;
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    width: 300px;
     padding: 5px;
-    margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
 
-input[type="submit"] {
-    width: 20vw;
+.botao {
+
+    width: 10vw;
     padding: 5px;
-    background-color: #0055a0; /* Mantive apenas uma definição */
+    background-color: green;
     color: #fff;
     border: none;
     border-radius: 5px;

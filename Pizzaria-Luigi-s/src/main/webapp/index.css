@@ -1,3 +1,8 @@
+@font-face {
+  font-family: myFirstFont;
+  src: url(sansation_light.woff);
+}
+
 * {
     border: green 1px solid;
 }
@@ -18,7 +23,7 @@ body {
     height: 124px;
     background-color: #CC0101;
 }
-cabecalho > h2{
+.cabecalho > h2{
     font-size: 32px;
 
 }
@@ -64,11 +69,51 @@ cabecalho > h2{
     display:flex;
     flex-direction:column;
     justify-content:center;
-    
+    align-items:center;
     width: 50vw;
 }
 .como-fazemos > div > p{
     width: 40vw;
+}
+.como-fazemos > div > h3{
+    display: flex;
+    justify-content:center;
+    width: 40vw;
+}
+.sobre-nos{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 75vh;
+}
+.sobre-nos > h2{
+    width: 160px:
+}
+.sobre-nos > p{
+    width: 80vw;
+}
+footer{
+    display:flex;
+    flex-direction:row;
+    justify-content: space-between;
+    background-color:#484848;
+}
+footer > img{
+    width:40px;
+    height:40px;
+}
+.rodape-esq{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-around;
+    width:50vw;
+}
+.rodape-dir{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-around;
+    width:15vw;
 }
 
 

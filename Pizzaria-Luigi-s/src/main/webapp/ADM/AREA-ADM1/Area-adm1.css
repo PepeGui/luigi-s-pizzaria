@@ -1,5 +1,5 @@
 *{
-border: green 1px solid !important;
+
 }
 body{
 background-color: #D7D7D7;
@@ -7,23 +7,36 @@ background-color: #D7D7D7;
 
 
 h1 {
+
 display:flex;
 justify-content: center;
+
 }
 
-.botons {
+.bt {
 
 display:flex;
-justify-content:center;
+justify-content:space-around;
 align-items:center;
-height: 100vh;
+flex-direction:column;
+height: 90vh;
+font-size:px;
+
+
+
 
 }
+button {
 
-.coluna{
-    width: 200px;
+font-size: 30px;
+cursor:pointer;
+background-color: #A91C1C;
+color: white;
+height: 64px;
+width: 10vw;
+border-radius:15px;
+border:inherit;
 
-    text-align: center;
 }
 
 

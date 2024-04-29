@@ -4,9 +4,9 @@
 
 body {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     height: 100vh;
     background-color: #D7D7D7;
     font-family: Arial, sans-serif;

@@ -1,0 +1,36 @@
+*{
+border: green 1px solid !important;
+}
+body{
+background-color: #D7D7D7;
+}
+
+
+h1 {
+display:flex;
+justify-content: center;
+}
+
+.botons {
+
+display:flex;
+justify-content:center;
+align-items:center;
+height: 100vh;
+
+}
+
+.coluna{
+    width: 200px;
+
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+

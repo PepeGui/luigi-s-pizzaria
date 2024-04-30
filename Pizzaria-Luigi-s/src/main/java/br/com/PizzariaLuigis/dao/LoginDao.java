@@ -1,69 +1,45 @@
 package br.com.PizzariaLuigis.dao;
 
-import br.com.PizzariaLuigis.model.Login;
+import br.com.PizzariaLuigis.model.Usuarios;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class LoginDao {
-    public void createLogin(Login log) {
+    public Boolean VerificacaoLogin(Usuarios user) {
 
-        String SQL = "INSERT INTO CAR (NAME) VALUES (?)";
-
-        try {
-
-            Connection connection = DriverManager.getConnection("jdbc:h2:~/test", "sa","sa");
-
-            System.out.println("success in database connection");
-
-            PreparedStatement preparedStatement = connection.prepareStatement(SQL);
-
-            preparedStatement.setString(1, log.getNome());
-            preparedStatement.execute();
-
-            System.out.println("success in insert car");
-
-            connection.close();
-
-        } catch (Exception e) {
-
-            System.out.println("fail in database connection");
-
-        }
-
-    }
-    public Boolean VericacaoLogin(Login log) {
-
-        String SQL = "SELECT * FROM Usuarios";
+        String SQL = "SELECT * FROM USUARIOS";
 
         try {
 
             Connection connection = DriverManager.getConnection("jdbc:h2:~/test", "sa", "sa");
-
+            System.out.println("passou aqui");
             System.out.println("success in database connection");
 
             PreparedStatement preparedStatement = connection.prepareStatement(SQL);
 
             ResultSet resultSet = preparedStatement.executeQuery();
 
-            List<Login> logs = new ArrayList<>();
+            List<Usuarios> userios = new ArrayList<>();
 
             while (resultSet.next()) {
 
-                String nome = resultSet.getString("name");
+                String nome = resultSet.getString("NOMEUSUARIO");
+                String senha = resultSet.getString("SENHA");
 
-                Login car = new Login();
+                Usuarios usuario = new Usuarios();
+                usuario.setNomeUsuario(nome);
+                usuario.setSenha(senha);
 
-                logs.add(car);
+                userios.add(usuario);
 
             }
-            for (Login lg : logs) {
-                if(lg.getNome() == log.getNome() & lg.getSenha() == log.getSenha()){
+            for (Usuarios us : userios) {
+                if(us.getNomeUsuario() == user.getNomeUsuario() & us.getSenha() == user.getSenha()){
                     System.out.println("success in login");
                     connection.close();
                     return true;

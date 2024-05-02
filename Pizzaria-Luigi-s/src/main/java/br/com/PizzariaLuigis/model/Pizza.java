@@ -8,6 +8,11 @@ public class Pizza {
 
     public Pizza(int idPizza) {this.setIDPizza(idPizza);}
     public Pizza() {this(0);}
+    public Pizza(String nome,double preco, String descricao){
+        setDescricao(descricao);
+        setNome(nome);
+        setPreco(preco);
+    }
 
     public String getDescricao() {
         return descricao;

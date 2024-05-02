@@ -7,7 +7,7 @@ import java.sql.PreparedStatement;
 
 public class PizzaDao {
 
-    public void createPizza(Pizza pizza){
+    public static void createPizza(Pizza pizza){
 
         String SQL = "INSERT INTO PIZZA (NOME, PRECO, DESCRICAO ) VALUES (?,?,?)";
 

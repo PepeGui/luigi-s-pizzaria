@@ -1,0 +1,31 @@
+*{
+//border: green 1px solid;
+}
+
+body {
+
+}
+h1{
+
+display:flex;
+justify-content:center;
+
+}
+
+.tabela{
+border:inherit !important;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+height:95vh;
+width:95vw;
+}
+.tabela > thead > th {
+border: inherit;
+}
+
+.tred{
+
+background-color: red;
+
+}

@@ -1,6 +1,4 @@
-*{
 
-}
 body{
 background-color: #D7D7D7;
 }
@@ -22,10 +20,8 @@ flex-direction:column;
 height: 90vh;
 font-size:px;
 
-
-
-
 }
+
 button {
 
 font-size: 30px;

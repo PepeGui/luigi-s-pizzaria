@@ -1,5 +1,5 @@
 *{
-border: green 1px solid;
+
 }
 
 body{
@@ -22,20 +22,51 @@ width: 100%;
 
 .tab{
 
-display:flex;
+display: flex;
 background-color: #A91C1C;
-justify-content:space-evenly;
+color:white;
+justify-content:space-around;
 height: 55 px;
 width: 50vw ;
 }
+
 .table{
-width: 30vw;
+width: 50vw;
 
 }
-
+.pizza{
+text-align:center;
+}
 .ft{
-width: 200px;
+text-align:center;
 }
+
+.bt{
+align-items:center;
+font-size: 15px;
+cursor:pointer;
+background-color: #A91C1C;
+color: white;
+height: 35px;
+width: 5vw;
+border-radius: 100px;
+border:inherit;
+}
+
+.sair{
+font-size: 15px;
+    position:absolute;
+    right:5%;
+background-color: #D7D7D7;
+color: #A91C1C;
+cursor:pointer;
+border:inherit;
+}
+
+
+
+
+
 
 
 

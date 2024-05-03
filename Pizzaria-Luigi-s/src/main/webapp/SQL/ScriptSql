@@ -56,12 +56,13 @@ create table Carrinho (
     FormaPagamento VARCHAR(50),
     FOREIGN KEY (IDPedido) REFERENCES Pedido(IDPedido)
 );
--------------------------------------
+--------------------------------------
 CREATE TABLE Pizza (
     IDPizza INT PRIMARY KEY AUTO_INCREMENT,
     Nome VARCHAR(50),
     Preco DOUBLE,
-    Descricao VARCHAR(400)
+    Descricao VARCHAR(400),
+    Imagem  VARCHAR(800)
 );
 --------------------------------------------
 CREATE TABLE Ingrediente (

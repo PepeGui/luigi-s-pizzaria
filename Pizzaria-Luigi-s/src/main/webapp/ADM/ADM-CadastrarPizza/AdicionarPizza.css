@@ -1,0 +1,24 @@
+*{
+    border: 1px green solid;
+}
+body{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+.inputs{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    height:30vh;
+    width: 30vw;
+}
+
+input-box{
+    display: flex;
+    flex-direction: column;
+
+}

@@ -1,28 +1,51 @@
-<html><!doctype html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Adicionar Pizza</title>
+    <link rel="stylesheet" href="AdicionarPizza.css">
 </head>
 <body>
-<h2>Create Car</h2>
+
+<div>
+    <h2>Adicionar Pizza</h2>
+</div>
 
 <form action="/adicionar-pizza" method="post">
+    <div class="inputs">
 
-    <label>Nome</label>
-    <input type="text" name="nome-pizza" id="nome-pizza"/>
+        <div class="input-box">
+            <label>Nome</label>
+            <input type="text" name="nome-pizza" id="nome-pizza"/>
+        </div>
 
-    <label>Preço</label>
-    <input type="text" name="preco-pizza" id="preco-pizza"/>
+        <div class="input-box">
+            <label>Preço</label>
+            <input type="text" name="preco-pizza" id="preco-pizza"/>
+        </div>
 
-    <label>Descrição</label>
-    <input type="text" name="descricao-pizza" id="descricao-pizza"/>
+        <div class="input-box">
+            <label>Ingredientes</label>
+            <input type="text" name="ingredientes-pizza" id="ingredientes-pizza"/>
+        </div>
 
-    <button type="submit">Adicionar</button>
+        <div class="input-box">
+            <label>Descrição</label>
+            <input type="text" name="descricao-pizza" id="descricao-pizza"/>
+        </div>
+
+    </div>
+
+
+        <img src="../../images/Image.png" alt="">
 
 </form>
+
+    <a href="../AREA-ADM1/Area-adm1.html">Sair</a>
+
+    <button type="submit">Adicionar</button>
 
 </body>

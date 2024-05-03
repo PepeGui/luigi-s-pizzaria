@@ -1,12 +1,19 @@
 @font-face {
-  font-family: myFirstFont;
-  src: url(sansation_light.woff);
+  font-family: font-inter;
+  src: url(./Fonts/Inter/Inter-VariableFont_sInt,wght.ttf);
+}
+@font-face {
+  font-family: font-inter;
+  src: url(./Fonts/Great_Vibes/GreatVibes-Regular.ttf);
 }
 
 * {
     border: green 1px solid;
+    font-family: font-inter;
 }
-
+p{
+   font-family: font-inter;
+}
 body {
     background-color: #D7D7D7;
     margin: 0px;

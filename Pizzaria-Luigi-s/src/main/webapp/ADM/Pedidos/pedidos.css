@@ -1,31 +1,41 @@
 *{
-//border: green 1px solid;
+border: green 1px solid;
 }
 
-body {
-
+body{
+background-color: #D7D7D7;
 }
-h1{
 
+.cab{
+display:flex;
+justify-content: center;
+}
+
+form{
 display:flex;
 justify-content:center;
-
-}
-
-.tabela{
-border:inherit !important;
-flex-direction:column;
-justify-content:center;
 align-items:center;
-height:95vh;
-width:95vw;
-}
-.tabela > thead > th {
-border: inherit;
+flex-direction:column;
+height: 85vh;
+width: 100%;
 }
 
-.tred{
+.tab{
 
-background-color: red;
+display:flex;
+background-color: #A91C1C;
+justify-content:space-evenly;
+height: 55 px;
+width: 50vw ;
+}
+.table{
+width: 30vw;
 
 }
+
+.ft{
+width: 200px;
+}
+
+
+

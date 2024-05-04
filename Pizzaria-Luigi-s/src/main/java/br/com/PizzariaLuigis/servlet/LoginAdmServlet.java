@@ -17,6 +17,9 @@ public class LoginAdmServlet extends HttpServlet {
         String nome = request.getParameter("user");
         String pass = request.getParameter("pass");
 
+        System.out.println(nome);
+        System.out.println(pass);
+
         Usuarios user = new Usuarios();
         user.setNomeUsuario(nome);
         user.setSenha(pass);
@@ -25,9 +28,9 @@ public class LoginAdmServlet extends HttpServlet {
         boolean retornoLogin = logDao.VerificacaoLogin(user);
 
         if (retornoLogin) {
-            response.sendRedirect("index.html");
+            response.sendRedirect("ADM/AREA-ADM1/Area-adm1.html");
         } else {
-            response.sendRedirect("Adm1.html?error=1");
+            response.sendRedirect("ADM/Adm1.html");
         }
     }
 }

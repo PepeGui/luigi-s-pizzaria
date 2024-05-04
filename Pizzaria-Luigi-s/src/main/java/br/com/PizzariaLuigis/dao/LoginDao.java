@@ -17,7 +17,6 @@ public class LoginDao {
         try {
 
             Connection connection = DriverManager.getConnection("jdbc:h2:~/test", "sa", "sa");
-            System.out.println("passou aqui");
             System.out.println("success in database connection");
 
             PreparedStatement preparedStatement = connection.prepareStatement(SQL);
@@ -31,6 +30,9 @@ public class LoginDao {
                 String nome = resultSet.getString("NOMEUSUARIO");
                 String senha = resultSet.getString("SENHA");
 
+                System.out.println("passou aqui"+nome);
+                System.out.println("passou aqui"+senha);
+
                 Usuarios usuario = new Usuarios();
                 usuario.setNomeUsuario(nome);
                 usuario.setSenha(senha);
@@ -39,7 +41,7 @@ public class LoginDao {
 
             }
             for (Usuarios us : userios) {
-                if(us.getNomeUsuario() == user.getNomeUsuario() & us.getSenha() == user.getSenha()){
+                if(us.getNomeUsuario().equals(user.getNomeUsuario())  && us.getSenha().equals(user.getSenha()) ){
                     System.out.println("success in login");
                     connection.close();
                     return true;

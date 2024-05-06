@@ -16,35 +16,49 @@
 </head>
 <body>
 <h1>Editar Ingredientes</h1>
-<table>
-    <tr>
-        <td>Item:</td>
-        <td><input type="text" name="nome" size="40"> <br /></td>
-    </tr>
-    <tr>
-        <td>quantidade:</td>
-        <td><input type="text" name="sobrenome" size="40"> <br /></td>
-    </tr>
-    <tr>
-        <td>Unidade de Medida:</td>
-        <td><select>
-            <option value="valor1">1 KG</option>
-            <option value="valor2">2 KG</option>
-            <option value="valor3">3 KG</option>
-            <option value="valor4">4 KG</option>
-            <option value="valor5">5 KG</option>
+<div>
+
+    <section class="container stretch">
 
 
-        </select>
-        </td>
-    </tr>
-    <tr>
-        <td>Descrição:</td>
-        <td><input type="text" name="sobrenome" size="40"> <br /></td>
-    </tr>
-</table>
-<img src="caixa.png">
+        <div class="item item-1">
+            <h4>Item:</h4>
+            <input type="text" name="nome" size="40">
+
+            <h4>quantidade:</h4>
+            <input type="text" name="sobrenome" size="40">
+
+            <h4> Unidade de Medida:</h4>
+            <select>
+                <option value="valor1" selected> KG</option>
+                <option value="valor1">1 KG</option>
+                <option value="valor2">2 KG</option>
+                <option value="valor3">3 KG</option>
+                <option value="valor4">4 KG</option>
+                <option value="valor5">5 KG</option>
+            </select>
+
+            <h4> Descrição:</h4>
+
+            <textarea>Descrição...</textarea>
+
+
+        </div>
+
+        <div class="ft ft-2">
+            <img src="caixa.png" >
+        </div>
+    </section>
+</div>
+
+
+
+
+
 <button  type="submit" class="sair">Sair</button>
-<button  type="submit" class="Confirmar">Confirmar</button>
+<button  type="submit" class="confirmar">Confirmar</button>
+
+
+
 </body>
 </html>

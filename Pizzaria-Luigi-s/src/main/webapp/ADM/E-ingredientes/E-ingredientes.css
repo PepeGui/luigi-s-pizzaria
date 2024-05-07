@@ -11,43 +11,25 @@ display:flex;
 justify-content:center;
 }
 
-
-textarea{
-
-  width: 25%;
-  height: 150px;
-  padding: 12px 20px;
-  border-radius: 4px;
-  resize: none;
-
+form{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 80%;
 }
 
-.stretch .item-1 {
-  align-self: stretch;
+.tx{
+
+ display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: start;
+    height:40vh;
+    width: 30vw;
 }
 
-.stretch .item-2 {
-  align-self: stretch;
-}
 
-.container {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  grid-template-rows: repeat(1, 400px);
-}
-
-.item {
-  text-align: left;
-  font-size: 1.25em;
-  font-weight: normal;
-}
-.ft {
-
-  text-align: center;
-  font-size: 1.25em;
-  font-weight: normal;
-
-}
 
 .sair{
 font-size: 15px;

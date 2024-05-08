@@ -4,41 +4,35 @@
 
 body{
 background-color: #D7D7D7;
+height: 95vh;
 }
-
-.cab{
-display:flex;
-justify-content: center;
-}
-
-form{
-display:flex;
-justify-content:center;
-align-items:center;
-flex-direction:column;
-height: 85vh;
-width: 100%;
-}
-
-.tab{
-
+h1{
 display: flex;
-background-color: #A91C1C;
-color:white;
-justify-content:space-around;
-height: 55 px;
-width: 50vw ;
+justify-content:center;
 }
 
-.table{
-width: 50vw;
-
+table{
+    background-color: white;
+     width: 80%;
+     margin: 2em auto;
+     border-radius: 10px;
+     border-collapse: separate;
+     overflow: hidden;
 }
-.pizza{
-text-align:center;
+.th{
+text-align:right;
 }
-.ft{
-text-align:center;
+table tr th{
+    color:white;
+    background-color: #a91c1c;
+    height: 2em;
+    font-weight: 200;
+}
+table tr td{
+    height: 4em;
+    text-align: center;
+    border-bottom: 1px solid black;
+    font-size: 16px;
 }
 
 .bt{

@@ -1,4 +1,4 @@
-* {
+ * {
     border: 0;
 }
 
@@ -22,6 +22,11 @@ table{
 .th{
 text-align:center;
 }
+
+.td{
+text-align:center;
+}
+
 table tr th{
     color:white;
     background-color: #a91c1c;
@@ -39,9 +44,8 @@ table tr td{
 font-size: 15px;
 display:flex;
 justify-content:flex-end;
-width: 83vw;
+width: 84vw;
 background-color: transparent ;
-color: ;
 
 
 }
@@ -50,6 +54,7 @@ color: ;
 font-size: 15px;
     position:absolute;
 background-color: #D7D7D7 ;
+width: 30vw;
 color: #A91C1C;
 cursor:pointer;
 border-radius: 15px;

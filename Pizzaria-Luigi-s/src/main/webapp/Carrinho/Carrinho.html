@@ -1,83 +1,75 @@
-
-
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/html">
+<html>
 <head>
-    <link rel="stylesheet" href="./Carrinho.css">
+    <link rel="stylesheet" type="text/css" href="Carrinho.css">
 </head>
 <body>
 
-    <h1>Carrinho</h1>
-    <table>
+<h1 class="cab">Carrinho</h1>
+<table cellspacing="0">
+    <tr>
+        <th class="th">Item</th>
+        <th></th>
+        <th>Qtd.</th>
+        <th class="th">Preço</th>
+        <th>SubTotal</th>
 
-        <thead class="cb">
+        <th></th>
+    </tr>
 
-            <tr>
-                <th>Item</th>
-                <th> Qtd.</th>
-                <th>Preço</th>
-                <th>Subtotal</th>
-            </tr>
-        </thead>
-        <tbody class="tabela">
-            <tr>
-                <td>
-                    <img src="../images/cocacola.jpg" width="100px" height="100" alt=""/>
+    <tr>
+        <td><img src="../images/pizza.png"></td>
+        <td>Pizza de calabresa</td>
+        <td><button type="submit" class="bt"><select>
+            <option value="valor1" selected> 0</option>
+            <option value="valor1">1 </option>
+            <option value="valor2">2 </option>
+            <option value="valor3">3 </option>
+            <option value="valor4">4 </option>
+            <option value="valor5">5 </option>
+        </select></button></td>
+        <td><button type="submit" class="bt">R$39,00</button></td>
+        <td><button type="submit" class="bt">R$39,00</button></td>
 
-                    Pizza de Pepperoni
-                </td>
-                <td>
-                    <input type="number" name="">
-                </td>
-                <td>R$39,99</td>
-                <td>R$39,99</td>
-            </tr>
-            <tr>
-                <td>
-                    <img src="../images/cocacola.jpg" width="100px" height="100" alt=""/>
-                    Pizza de Calabresa
-                </td>
-                <td>
-                    <input type="number" name="">
+    </tr>
+    <tr>
+        <td><img src="../images/pizza.png"></td>
+        <td>Pizza de calabresa</td>
+        <td><button type="submit" class="bt"><select>
+            <option value="valor1" selected> 0</option>
+            <option value="valor1">1 </option>
+            <option value="valor2">2 </option>
+            <option value="valor3">3 </option>
+            <option value="valor4">4 </option>
+            <option value="valor5">5 </option>
+        </select></button></td>
+        <td><button type="submit" class="bt">R$39,00</button></td>
+        <td><button type="submit" class="bt">R$39,00</button></td>
 
-                </td>
-                <td>R$39,99</td>
-                <td>R$39,99</td>
-            </tr>
-            <tr>
-                <td>
-                    <img src="../images/pizza.jpg" width="100px" height="100" alt=""/>
-                    Coca Cola 2L
-                </td>
-                <td>
-                    <input type="number" name="">
+    </tr>
 
-                </td>
-                <td>R$9,99</td>
-                <td>R$9,99</td>
-            </tr>
-        </tbody>
+    <tr>
+        <td><img src="../images/Limonade.jpg"></td>
+        <td>Limonada</td>
+        <td><button type="submit" class="bt"><select>
+            <option value="valor1" selected> 0</option>
+            <option value="valor1">1 </option>
+            <option value="valor2">2 </option>
+            <option value="valor3">3 </option>
+            <option value="valor4">4 </option>
+            <option value="valor5">5 </option>
+        </select></button></td>
+        <td><button type="submit" class="bt">R$39,00</button></td>
+        <td><button type="submit" class="bt">R$39,00</button></td>
 
-    </table>
-
-        <p>Subtotal</p>
-        <p> R$117,99</p>
-
+    </tr>
+</table>
+<div class="sub"><div>
+    SubTotal
+    <br>R$117,00</br></div>
+</div>
+<button  type="submit" class="bt">Continuar Comprando</button>
+<button  type="submit" class="bts">Limpar Carrinho</button>
+<button  type="submit" class="btss">Confirmar</button>
 </body>
-
-
-<style>
-
-
-</style>
-
-<button type="button"> Continuar compando  </button>
-<button type="button"> limpar Carrinho </button>
-<button type="button"> Confirma  </button>
-
-
-
-
 </html>
-
-

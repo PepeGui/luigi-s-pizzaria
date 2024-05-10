@@ -9,7 +9,7 @@ public class PizzaDao {
 
     public static void createPizza(Pizza pizza){
 
-        String SQL = "INSERT INTO PIZZA (NOME, PRECO, DESCRICAO ) VALUES (?,?,?)";
+        String SQL = "INSERT INTO PIZZA (NOME, PRECO, DESCRICAO, IMAGE ) VALUES (?,?,?,?)";
 
         try {
             Connection con = DriverManager.getConnection("jdbc:h2:~/test", "sa","sa");
@@ -21,6 +21,7 @@ public class PizzaDao {
             preparedStatement.setString(1,pizza.getNome());
             preparedStatement.setDouble(2,pizza.getPreco());
             preparedStatement.setString(3,pizza.getDescricao());
+            preparedStatement.setString(4, pizza.getImagePath());
 
             preparedStatement.execute();
 

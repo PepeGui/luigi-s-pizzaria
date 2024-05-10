@@ -9,7 +9,7 @@ public class PizzaDao {
 
     public static void createPizza(Pizza pizza){
 
-        String SQL = "INSERT INTO PIZZA (NOME, PRECO, DESCRICAO, IMAGE ) VALUES (?,?,?,?)";
+        String SQL = "INSERT INTO PIZZA (NOME, PRECO, DESCRICAO, IMAGEM ) VALUES (?,?,?,?)";
 
         try {
             Connection con = DriverManager.getConnection("jdbc:h2:~/test", "sa","sa");

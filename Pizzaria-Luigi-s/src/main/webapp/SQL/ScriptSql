@@ -62,7 +62,7 @@ CREATE TABLE Pizza (
     Nome VARCHAR(50),
     Preco DOUBLE,
     Descricao VARCHAR(400),
-    Imagem  VARCHAR(800)
+    Imagem  VARCHAR(255)
 );
 --------------------------------------------
 CREATE TABLE Ingrediente (

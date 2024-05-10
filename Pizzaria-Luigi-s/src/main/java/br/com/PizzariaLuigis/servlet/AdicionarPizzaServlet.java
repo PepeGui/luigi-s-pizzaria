@@ -46,6 +46,8 @@ public class AdicionarPizzaServlet extends HttpServlet {
 
         Pizza p = new Pizza(pizzaName, pizzaPreco, pizzaDescricao, imagePath);
 
+        System.out.println(pizzaName + " " + pizzaPreco + " " + pizzaDescricao + " " + imagePath );
+
         PizzaDao.createPizza(p);
 
         request.getRequestDispatcher("AdicionarPizza.html").forward(request, response);
@@ -53,14 +55,14 @@ public class AdicionarPizzaServlet extends HttpServlet {
 
     // Método para salvar a imagem no servidor
     private String saveImageToServer(InputStream fileContent) throws IOException {
-        // Defina o diretório onde deseja salvar as imagens
-        String directory = "./storage";
+        // Obtenha o diretório atual do servlet context
+        String directory = getServletContext().getRealPath("/storage/");
 
         // Gere um nome único para a imagem (você pode usar algum algoritmo de hash)
         String imageName = UUID.randomUUID().toString() + ".jpg";
 
         // Crie o arquivo de imagem
-        File file = new File(directory + imageName);
+        File file = new File(directory, imageName);
         try (OutputStream outputStream = new FileOutputStream(file)) {
             byte[] buffer = new byte[1024];
             int bytesRead;
@@ -70,6 +72,6 @@ public class AdicionarPizzaServlet extends HttpServlet {
         }
 
         // Retorne o caminho completo da imagem no servidor
-        return directory + imageName;
+        return directory + File.separator + imageName;
     }
 }

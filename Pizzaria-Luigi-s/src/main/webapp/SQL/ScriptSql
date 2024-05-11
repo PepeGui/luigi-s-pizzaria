@@ -68,8 +68,8 @@ CREATE TABLE Pizza (
 CREATE TABLE Ingrediente (
     IDIngrediente INT PRIMARY KEY AUTO_INCREMENT,
     Nome VARCHAR(50),
-    QuantidadeEstoque INT,
-    UnidadeMedida INT
+    QuantidadeEstoque DOUBLE,
+    Descricao Varchar(255                   )
 );
 --------------------------------------------
 CREATE TABLE Pizza_Ingrediente (

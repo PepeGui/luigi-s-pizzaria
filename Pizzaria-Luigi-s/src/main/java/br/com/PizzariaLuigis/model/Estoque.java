@@ -2,7 +2,7 @@ package br.com.PizzariaLuigis.model;
 
 public class Estoque {
     private int IDEstoque;
-    private Ingredientes IDIngrediente;
+    private Ingrediente IDIngrediente;
     private int Quantidade;
     private String DataAtualizacao;
 
@@ -13,12 +13,12 @@ public class Estoque {
     public void setIDEstoque(int IDEstoque) {
         this.IDEstoque = IDEstoque;
     }
-    public Ingredientes getIDIngrediente() {
+    public Ingrediente getIDIngrediente() {
         return IDIngrediente;
     }
 
     public void setIDIngrediente(int IDIngrediente) {
-        this.IDIngrediente = new Ingredientes(IDIngrediente);
+        this.IDIngrediente = new Ingrediente(IDIngrediente);
     }
 
     public int getQuantidade() {

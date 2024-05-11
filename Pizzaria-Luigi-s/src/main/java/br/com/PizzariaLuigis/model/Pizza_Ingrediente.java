@@ -2,7 +2,7 @@ package br.com.PizzariaLuigis.model;
 
 public class Pizza_Ingrediente {
     private Pizza IDPizza;
-    private Ingredientes IDIngrediente;
+    private Ingrediente IDIngrediente;
 
     public void setIDPedido(int idPizza) {
         this.IDPizza = new Pizza(idPizza);
@@ -12,11 +12,11 @@ public class Pizza_Ingrediente {
         return IDPizza;
     }
 
-    public Ingredientes getIDIngrediente() {
+    public Ingrediente getIDIngrediente() {
         return IDIngrediente;
     }
 
     public void setIDIngrediente(int IDIngrediente) {
-        this.IDIngrediente = new Ingredientes(IDIngrediente);
+        this.IDIngrediente = new Ingrediente(IDIngrediente);
     }
 }

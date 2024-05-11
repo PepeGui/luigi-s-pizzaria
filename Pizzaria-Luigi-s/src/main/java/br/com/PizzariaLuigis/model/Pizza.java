@@ -16,6 +16,11 @@ public class Pizza {
         this.preco = preco;
         this.imagePath = imagePath;
     }
+    public Pizza(String nome,double preco, String descricao ){
+        this.descricao = descricao;
+        this.nome = nome;
+        this.preco = preco;
+    }
 
     public String getDescricao() {
         return descricao;

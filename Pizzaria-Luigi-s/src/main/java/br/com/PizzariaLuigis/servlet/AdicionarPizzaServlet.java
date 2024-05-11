@@ -50,7 +50,7 @@ public class AdicionarPizzaServlet extends HttpServlet {
 
         PizzaDao.createPizza(p);
 
-        request.getRequestDispatcher("AdicionarPizza.html").forward(request, response);
+        request.getRequestDispatcher("/ADM/AREA-ADM1/Area-adm1.html").forward(request, response);
     }
 
     // Método para salvar a imagem no servidor

@@ -1,6 +1,6 @@
 package br.com.PizzariaLuigis.servlet;
 
-import br.com.PizzariaLuigis.dao.AdicionarIngredienteDao;
+import br.com.PizzariaLuigis.dao.IngredienteDao;
 import br.com.PizzariaLuigis.model.Ingrediente;
 
 import javax.servlet.ServletException;
@@ -28,7 +28,7 @@ public class AdicionarIngredienteServlet extends HttpServlet {
 
                 System.out.println(ingredienteNome + "\n" + ingredienteQtd + "\n" + ingredienteDescricao);
 
-                AdicionarIngredienteDao.createIngrediente(i);
+                IngredienteDao.createIngrediente(i);
 
                 request.getRequestDispatcher("/ADM/AREA-ADM1/Area-adm1.html").forward(request, response);
 

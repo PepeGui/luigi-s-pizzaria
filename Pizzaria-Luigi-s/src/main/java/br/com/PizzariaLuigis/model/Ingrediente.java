@@ -16,6 +16,12 @@ public class Ingrediente {
         this.QuantidadeEstoque = qtd;
         this.Descricao = desc;
     }
+    public Ingrediente(int id,String nome, double qtd, String desc){
+        this.IDIngrediente = id;
+        this.Nome = nome;
+        this.QuantidadeEstoque = qtd;
+        this.Descricao = desc;
+    }
 
 
 

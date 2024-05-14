@@ -8,7 +8,7 @@ import java.sql.PreparedStatement;
 public class AdicionarIngredienteDao {
 
     public static void createIngrediente(Ingrediente ingrediete){
-        String SQL = "INSERT INTO INGREDIENTES (NOME, QUANTIDADEESTOQUE, DESCRICAO) VALUES (?,?,?)";
+        String SQL = "INSERT INTO INGREDIENTE (NOME, QUANTIDADEESTOQUE, DESCRICAO) VALUES (?,?,?)";
 
         try{
             Connection con = DriverManager.getConnection("jdbc:h2:~/test", "sa","sa");
@@ -27,8 +27,10 @@ public class AdicionarIngredienteDao {
 
             con.close();
         }
-        catch (Exception err){
+        catch (Exception e){
             System.out.println("fail in database connection");
+            System.err.println("Error inserting ingredient into database: " + e.getMessage());
+            e.printStackTrace();
         }
     }
 

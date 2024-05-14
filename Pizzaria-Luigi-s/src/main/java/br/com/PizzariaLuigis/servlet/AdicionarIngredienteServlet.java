@@ -11,27 +11,26 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 
-/*@WebServlet("adicionar-ingrediente")
+@WebServlet("/adicionar-ingrediente")
 
 public class AdicionarIngredienteServlet extends HttpServlet {
 
-        @Override
+
         protected void doPost(HttpServletRequest request, HttpServletResponse response ) throws  ServletException, IOException {
 
-        String ingredienteNome = request.getParameter("nome-ingrediente");
-        String ingredienteQtdStr = request.getParameter("quantidade-ingrediente");
-        String ingredienteDescricao = request.getParameter("descricao-ingrediente");
+                String ingredienteNome = request.getParameter("nome-ingrediente");
+                String ingredienteQtdStr = request.getParameter("quantidade-ingrediente");
+                String ingredienteDescricao = request.getParameter("descricao-ingrediente");
 
-        Double ingredienteQtd = Double.parseDouble(ingredienteQtdStr);
+                double ingredienteQtd = Double.parseDouble(ingredienteQtdStr);
 
-        Ingrediente i = new Ingrediente(ingredienteNome, ingredienteQtd, ingredienteDescricao);
+                Ingrediente i = new Ingrediente(ingredienteNome, ingredienteQtd, ingredienteDescricao);
 
-        System.out.println(ingredienteNome + "\n" + ingredienteQtd + "\n" + ingredienteDescricao);
+                System.out.println(ingredienteNome + "\n" + ingredienteQtd + "\n" + ingredienteDescricao);
 
-        AdicionarIngredienteDao.createIngrediente(i);
+                AdicionarIngredienteDao.createIngrediente(i);
 
-        request.getRequestDispatcher("/ADM/AREA-ADM1/Area-adm1.html").forward(request, response);
+                request.getRequestDispatcher("/ADM/AREA-ADM1/Area-adm1.html").forward(request, response);
 
-    }
+        }
 }
-*/

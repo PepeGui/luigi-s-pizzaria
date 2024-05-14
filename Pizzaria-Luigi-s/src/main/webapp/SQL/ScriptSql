@@ -1,7 +1,7 @@
 create database LuigisPizza
 
 CREATE TABLE Cliente (
-    ClienteID INT PRIMARY KEY,
+    ClienteID INT AUTO_INCREMENT PRIMARY KEY,
     Nome VARCHAR(50),
     CPF VARCHAR(11),
     Telefone VARCHAR(12),
@@ -14,7 +14,7 @@ INSERT INTO Cliente (ClienteID, Nome, CPF, Telefone, Endereco, Numero, CEP)
 VALUES (068, 'ROBSON', '12345678910', '(11) 98736-6621', 'AV Santo Amaro', 25, '01234567');
 -------------------------------------------------------------------------------------------
 CREATE TABLE Pedido (
-    PedidoID INT PRIMARY KEY,
+    PedidoID INT AUTO_INCREMENT PRIMARY KEY,
     ClienteID INT,
     DataPedido DATE,
     FOREIGN KEY (ClienteID) REFERENCES Cliente(ClienteID)
@@ -26,7 +26,7 @@ VALUES (068, 01, '16/09/2024');
 
 -------------------------------------------------------------
 create table ItemPedido (
-    ItemID INT PRIMARY KEY,
+    ItemID INT AUTO_INCREMENT PRIMARY KEY,
     PedidoID INT,
     NomeProduto VARCHAR(50),
     Quantidade INT,
@@ -52,13 +52,13 @@ SELECT * FROM Usuarios WHERE NomeUsuario = 'nome_inserido' AND Senha = 'senha_in
 --------------------------------------------------------------------------------------------
 
 create table Carrinho (
-    IDPedido INT,
+    IDPedido INT AUTO_INCREMENT PRIMARY KEY,
     FormaPagamento VARCHAR(50),
     FOREIGN KEY (IDPedido) REFERENCES Pedido(IDPedido)
 );
 --------------------------------------
 CREATE TABLE Pizza (
-    IDPizza INT PRIMARY KEY AUTO_INCREMENT,
+    IDPizza INT AUTO_INCREMENT PRIMARY KEY ,
     Nome VARCHAR(50),
     Preco DOUBLE,
     Descricao VARCHAR(400),
@@ -66,14 +66,14 @@ CREATE TABLE Pizza (
 );
 --------------------------------------------
 CREATE TABLE Ingrediente (
-    IDIngrediente INT PRIMARY KEY AUTO_INCREMENT,
+    IDIngrediente INT AUTO_INCREMENT PRIMARY KEY,
     Nome VARCHAR(50),
     QuantidadeEstoque DOUBLE,
-    Descricao Varchar(255                   )
+    Descricao Varchar(255)
 );
 --------------------------------------------
 CREATE TABLE Pizza_Ingrediente (
-    IDPizza INT,
+    IDPizza INT AUTO_INCREMENT ,
     IDIngrediente INT,
     PRIMARY KEY (IDPizza, IDIngrediente),
     FOREIGN KEY (IDPizza) REFERENCES Pizza(IDPizza),
@@ -81,14 +81,14 @@ CREATE TABLE Pizza_Ingrediente (
 );
 ---------------------------------
 create table Bebida (
-   IDBebida INT PRIMARY KEY,
+   IDBebida INT AUTO_INCREMENT PRIMARY KEY,
    Preco float,
    Descricao VARCHAR(400)
 );
 
 -------------------------------------
 create table Estoque (
-  IDEstoque INT PRIMARY KEY,
+  IDEstoque INT AUTO_INCREMENT PRIMARY KEY,
   IDIngrediente INT,
   Quantidade INT,
   DataAtualizacao DATE,

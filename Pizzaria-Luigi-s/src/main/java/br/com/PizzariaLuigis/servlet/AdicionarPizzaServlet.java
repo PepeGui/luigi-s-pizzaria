@@ -30,17 +30,16 @@ public class AdicionarPizzaServlet extends HttpServlet {
         String pizzaName = request.getParameter("nome-pizza");
         String pizzaPrecoStr = request.getParameter("preco-pizza");
         String pizzaDescricao = request.getParameter("descricao-pizza");
+        String id = request.getParameter("id");
 
         double pizzaPreco = Double.parseDouble(pizzaPrecoStr);
 
         InputStream fileContent = null;
         String imagePath = null;
 
-        // Obter a imagem enviada no formulário
         Part filePart = request.getPart("imagem-pizza");
         if (filePart != null) {
             fileContent = filePart.getInputStream();
-            // Salvar a imagem em algum diretório no servidor
             imagePath = saveImageToServer(fileContent);
         }
 
@@ -48,20 +47,23 @@ public class AdicionarPizzaServlet extends HttpServlet {
 
         System.out.println(pizzaName + " " + pizzaPreco + " " + pizzaDescricao + " " + imagePath );
 
-        PizzaDao.createPizza(p);
+        if (id.isBlank()) {
+            PizzaDao.createPizza(p);
+
+        } else {
+            p.setIDPizza(Integer.parseInt(id));
+            PizzaDao.updatePizza(p);
+        }
 
         request.getRequestDispatcher("/ADM/AREA-ADM1/Area-adm1.html").forward(request, response);
     }
 
-    // Método para salvar a imagem no servidor
     private String saveImageToServer(InputStream fileContent) throws IOException {
-        // Obtenha o diretório atual do servlet context
+
         String directory = getServletContext().getRealPath("/storage/");
 
-        // Gere um nome único para a imagem (você pode usar algum algoritmo de hash)
         String imageName = UUID.randomUUID().toString() + ".jpg";
 
-        // Crie o arquivo de imagem
         File file = new File(directory, imageName);
         try (OutputStream outputStream = new FileOutputStream(file)) {
             byte[] buffer = new byte[1024];
@@ -71,7 +73,6 @@ public class AdicionarPizzaServlet extends HttpServlet {
             }
         }
 
-        // Retorne o caminho completo da imagem no servidor
         return directory + File.separator + imageName;
     }
 }

@@ -22,11 +22,11 @@
     </tr>
     <c:forEach var="pizza" items="${pizzas}">
         <tr>
-            <td>${pizza.nome}</td>
-            <td>${pizza.preco}</td>
-            <td>${pizza.descricao}</td>
+            <td id="name">${pizza.nome}</td>
+            <td id="preco">${pizza.preco}</td>
+            <td id="descricao">${pizza.descricao}</td>
             <td>
-                <a href="/ADM/EditarPizza/EditarPizza.html">
+                <a href="/ADM/EditarPizza/EditarPizza.jsp?id=${pizza.IDPizza}&name=${pizza.nome}&preco=${pizza.preco}&descricao=${pizza.descricao}">
                     <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                         <rect x="0.00317383" width="60" height="60" fill="url(#pattern0_403_55)"/>
                         <defs>
@@ -43,7 +43,7 @@
 </table>
 <div>
     <a href="/ADM/AREA-ADM1/Area-adm1.html"><button>Sair</button></a>
-    <a href="/ADM/ADM-CadastrarPizza/AdicionarPizza.html"><button  class="sherek">adicionar</button></a>
+    <a href="/ADM/AdicionarPizza/AdicionarPizza.html"><button  class="sherek">adicionar</button></a>
 </div>
 </body>
 </html>

@@ -16,7 +16,8 @@ public class Pizza {
         this.preco = preco;
         this.imagePath = imagePath;
     }
-    public Pizza(String nome,double preco, String descricao ){
+    public Pizza(int id,String nome,double preco, String descricao ){
+        this.IDPizza = id;
         this.descricao = descricao;
         this.nome = nome;
         this.preco = preco;

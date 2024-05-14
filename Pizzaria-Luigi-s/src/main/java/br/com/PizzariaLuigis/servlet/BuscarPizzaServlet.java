@@ -1,6 +1,6 @@
 package br.com.PizzariaLuigis.servlet;
 
-import br.com.PizzariaLuigis.dao.BuscarPizzaDao;
+import br.com.PizzariaLuigis.dao.PizzaDao;
 import br.com.PizzariaLuigis.model.Pizza;
 
 import javax.servlet.ServletException;
@@ -17,7 +17,7 @@ public class BuscarPizzaServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        List<Pizza> pizzas = new BuscarPizzaDao().BuscarPizzas();
+        List<Pizza> pizzas = new PizzaDao().BuscarPizzas();
 
         req.setAttribute("pizzas", pizzas);
 

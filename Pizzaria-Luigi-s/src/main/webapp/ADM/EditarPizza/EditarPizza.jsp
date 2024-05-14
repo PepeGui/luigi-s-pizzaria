@@ -21,12 +21,12 @@
 
             <div class="input-box">
                 <label>Nome</label>
-                <input type="text" name="nome-pizza" id="nome-pizza"/>
+                <input type="text" name="nome-pizza" id="nome-pizza" value="${param.name}"/>
             </div>
 
             <div class="input-box">
                 <label>Preço</label>
-                <input type="text" name="preco-pizza" id="preco-pizza"/>
+                <input type="text" name="preco-pizza" id="preco-pizza" value="${param.preco}"/>
             </div>
 
             <div class="input-box">
@@ -36,8 +36,9 @@
 
             <div class="input-box">
                 <label>Descrição</label>
-                <input type="text" name="descricao-pizza" id="descricao-pizza"/>
+                <input type="text" name="descricao-pizza" id="descricao-pizza" value="${param.descricao}"/>
             </div>
+            <input type="hidden" id="id" name="id" value="${param.id}">
 
         </div>
         
@@ -49,7 +50,7 @@
         <div>
             <a href="../AREA-ADM1/Area-adm1.html">Sair</a>
 
-            <button type="submit">Adicionar</button>
+            <button type="submit">Editar</button>
         </div>
     </div>
 

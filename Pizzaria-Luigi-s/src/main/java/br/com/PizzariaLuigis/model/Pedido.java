@@ -3,10 +3,17 @@ package br.com.PizzariaLuigis.model;
 public class Pedido {
     private int PedidoID;
     private Cliente ClienteID;
-    private String DataPedido;
+    private String Status;
 
     public Pedido(int pedidoID) {
         this.setPedidoID(pedidoID);
+    }
+
+    public Pedido(int pedidoID, int clienteID, String
+                  status) {
+        this.setPedidoID(pedidoID);
+        this.setClienteID(clienteID);
+        this.setStatus(status);
     }
 
     public int getPedidoID() {
@@ -25,11 +32,11 @@ public class Pedido {
         ClienteID = new Cliente(clienteID);
     }
 
-    public String getDataPedido() {
-        return DataPedido;
+    public String getStatus() {
+        return Status;
     }
 
-    public void setDataPedido(String dataPedido) {
-        DataPedido = dataPedido;
+    public void setStatus(String status) {
+        Status = status;
     }
 }

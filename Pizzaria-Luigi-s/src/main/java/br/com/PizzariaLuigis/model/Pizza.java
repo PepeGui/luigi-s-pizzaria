@@ -16,11 +16,12 @@ public class Pizza {
         this.preco = preco;
         this.imagePath = imagePath;
     }
-    public Pizza(int id,String nome,double preco, String descricao ){
+    public Pizza(int id,String nome,double preco, String descricao,String imagePath){
         this.IDPizza = id;
         this.descricao = descricao;
         this.nome = nome;
         this.preco = preco;
+        this.imagePath = imagePath;
     }
 
     public String getDescricao() {

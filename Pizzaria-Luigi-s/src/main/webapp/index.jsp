@@ -1,15 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page contentType="text/html; charset=UTF-8" %>
+<%@ page import="java.util.List, br.com.PizzariaLuigis.model.Pizza, br.com.PizzariaLuigis.dao.PizzaDao" %>
+
+<%
+    PizzaDao pizzaDao = new PizzaDao(); // Instanciando o objeto PizzaDao
+    List<Pizza> pizzas = pizzaDao.BuscarPizzas(); // Obtendo a lista de pizzas
+    request.setAttribute("pizzas", pizzas); // Definindo a lista de pizzas como um atributo de requisição
+%>
 <head>
     <meta charset="UTF-8">
     <title>Luigi's Pizzaria</title>
     <link rel="stylesheet" href="index.css">
-
 </head>
 <body>
     <header class="cabecalho">
         <div class="cabecalho-alto">
-            <h2 class="texto-branco">Luigi's Pizzaria</h2>
+            <h2 id="titulo" class="texto-branco">Luigi's Pizzaria</h2>
         </div>
             <div class="cabecalho-baixo">
                 <div id="texto">
@@ -44,20 +52,16 @@
 
     <section class="cardapio">
         <h2>Cardapio</h2>
-
         <div>
+        <c:forEach var="pizza" items="${pizzas}">
             <form action="/adicionar-item" method="post" enctype="multipart/form-data">
-                <img src="" alt="">
-                <h3>Pepperoni</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod lectus in nisl facilisis, sed interdum eros efficitur. Maecenas nulla.</p>
+                <img id="imagem" src="${pizza.imagePath}" alt="">
+                <h3 id="nome">${pizza.nome}</h3>
+                <p id="descricao">${pizza.descricao}</p>
+                <input type="hidden" name="id" value="${pizza.IDPizza}">
                 <button type="submit">Adicionar</button>
             </form>
-            <form action="/adicionar-item" method="post" enctype="multipart/form-data">
-                <img src="" alt="">
-                <h3>Pepperoni</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod lectus in nisl facilisis, sed interdum eros efficitur. Maecenas nulla.</p>
-                <button type="submit">Adicionar</button>
-            </form>
+        </c:forEach>
         </div>
     </section>
 

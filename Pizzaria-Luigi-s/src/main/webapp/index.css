@@ -9,10 +9,13 @@
 
 * {
     //border: green 1px solid;
-    font-family: font-inter;
+
 }
-p{
-   font-family: font-great;
+titulo{
+    font-family: font-great;
+}
+p h2 h3 h4{
+   font-family: font-inter;
 }
 body {
     background-color: #D7D7D7;
@@ -159,8 +162,3 @@ footer > img{
     justify-content:space-around;
     width:15vw;
 }
-
-
-
-
-

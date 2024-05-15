@@ -11,8 +11,20 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet("/find-all-pizzas")
+@WebServlet(value = "/find-all-pizzas", loadOnStartup = 1)
+
 public class BuscarPizzaServlet extends HttpServlet {
+
+    @Override
+    public void init() throws ServletException {
+        super.init();
+
+        System.out.println("passou ali");
+
+        List<Pizza> pizzas = new PizzaDao().BuscarPizzas();
+        getServletContext().setAttribute("pizzas", pizzas);
+
+    }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -21,7 +33,11 @@ public class BuscarPizzaServlet extends HttpServlet {
 
         req.setAttribute("pizzas", pizzas);
 
+        System.out.println("passou aqui");
+
         req.getRequestDispatcher("ADM/Cardapio/Cardapio.jsp").forward(req, resp);
+        //req.getRequestDispatcher("index.jsp").forward(req, resp);
+
 
     }
 

@@ -47,12 +47,17 @@ public class AdicionarPizzaServlet extends HttpServlet {
 
         System.out.println(pizzaName + " " + pizzaPreco + " " + pizzaDescricao + " " + imagePath );
 
-        if (id.isBlank()) {
+        if (id == null || id.isBlank()) {
             PizzaDao.createPizza(p);
 
         } else {
             p.setIDPizza(Integer.parseInt(id));
             PizzaDao.updatePizza(p);
+        }
+
+        if (imagePath != null) {
+            String imageURL = request.getContextPath() + "/" + imagePath;
+            response.getWriter().println("<img src=\"" + imageURL + "\" alt=\"Imagem da pizza\">");
         }
 
         request.getRequestDispatcher("/ADM/AREA-ADM1/Area-adm1.html").forward(request, response);
@@ -63,8 +68,8 @@ public class AdicionarPizzaServlet extends HttpServlet {
         String directory = getServletContext().getRealPath("/storage/");
 
         String imageName = UUID.randomUUID().toString() + ".jpg";
-
         File file = new File(directory, imageName);
+
         try (OutputStream outputStream = new FileOutputStream(file)) {
             byte[] buffer = new byte[1024];
             int bytesRead;
@@ -73,6 +78,6 @@ public class AdicionarPizzaServlet extends HttpServlet {
             }
         }
 
-        return directory + File.separator + imageName;
+        return "/storage/" + imageName;
     }
 }

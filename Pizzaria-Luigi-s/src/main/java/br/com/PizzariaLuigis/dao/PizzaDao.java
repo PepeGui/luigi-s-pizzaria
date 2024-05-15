@@ -58,8 +58,9 @@ public class PizzaDao {
                 String nome = resultSet.getString("Nome");
                 String preco = resultSet.getString("Preco");
                 String descricao = resultSet.getString("Descricao");
+                String imagem = resultSet.getString("Imagem");
 
-                Pizza pizza = new Pizza(Integer.parseInt(id),nome,Double.parseDouble(preco),descricao);
+                Pizza pizza = new Pizza(Integer.parseInt(id),nome,Double.parseDouble(preco),descricao,imagem);
 
                 pizzas.add(pizza);
 

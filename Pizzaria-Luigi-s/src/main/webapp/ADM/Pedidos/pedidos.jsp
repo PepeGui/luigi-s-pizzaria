@@ -20,8 +20,9 @@
              <td id="id">${pedido.pedidoID}</td>
              <td id="itens">Itens do Pedido</td>
              <td id="status">${pedido.status}</td>
-             <td><button type="submit" class="bt">Cancelar</button></td>
-             <td><button type="submit" class="bt">Confirmar</button></td>
+             <input type="hidden" id="id" name="id" value="{pedido.pedidoID}">
+             <td><a href="/mudarStatus-pedido?id=${pedido.pedidoID}&status=0"><button type="submit" class="bt">Cancelar</button></a></td>
+             <td><a href="/mudarStatus-pedido?id=${pedido.pedidoID}&status=1"><button type="submit" class="bt">Confirmar</button></a></td>
 
          </tr>
     </c:forEach>

@@ -50,7 +50,7 @@ public class PedidoDao {
 
         }
     }
-    public static void updatePizza(Pedido pedido){
+    public static void updatePedido(Pedido pedido, boolean confirmar){
         String SQL = "UPDATE PEDIDO SET Status = ? WHERE PedidoID = ?";
 
         try {
@@ -59,8 +59,10 @@ public class PedidoDao {
             System.out.println("success in database connection");
 
             PreparedStatement preparedStatement = con.prepareStatement(SQL);
-
-            preparedStatement.setString(1,pedido.getStatus());
+            if(confirmar == true)
+                preparedStatement.setString(1,"Pedido Confirmado");
+            else
+                preparedStatement.setString(1,"Pedido Cancelado");
             preparedStatement.setDouble(2,pedido.getPedidoID());
 
             preparedStatement.execute();

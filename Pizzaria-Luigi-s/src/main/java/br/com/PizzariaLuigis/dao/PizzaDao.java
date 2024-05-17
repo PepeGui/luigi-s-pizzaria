@@ -11,20 +11,20 @@ import java.util.List;
 
 public class PizzaDao {
 
-    public static void createPizza(Pizza pizza){
+    public static void createPizza(Pizza pizza) {
 
         String SQL = "INSERT INTO PIZZA (NOME, PRECO, DESCRICAO, IMAGEM ) VALUES (?,?,?,?)";
 
         try {
-            Connection con = DriverManager.getConnection("jdbc:h2:~/test", "sa","sa");
+            Connection con = DriverManager.getConnection("jdbc:h2:~/test", "sa", "sa");
 
             System.out.println("success in database connection");
 
             PreparedStatement preparedStatement = con.prepareStatement(SQL);
 
-            preparedStatement.setString(1,pizza.getNome());
-            preparedStatement.setDouble(2,pizza.getPreco());
-            preparedStatement.setString(3,pizza.getDescricao());
+            preparedStatement.setString(1, pizza.getNome());
+            preparedStatement.setDouble(2, pizza.getPreco());
+            preparedStatement.setString(3, pizza.getDescricao());
             preparedStatement.setString(4, pizza.getImagePath());
 
             preparedStatement.execute();
@@ -32,11 +32,11 @@ public class PizzaDao {
             System.out.println("success in insert pizza");
 
             con.close();
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             System.out.println("fail in database connection");
         }
     }
+
     public List<Pizza> BuscarPizzas() {
 
         String SQL = "SELECT * FROM PIZZA";
@@ -60,7 +60,7 @@ public class PizzaDao {
                 String descricao = resultSet.getString("Descricao");
                 String imagem = resultSet.getString("Imagem");
 
-                Pizza pizza = new Pizza(Integer.parseInt(id),nome,Double.parseDouble(preco),descricao,imagem);
+                Pizza pizza = new Pizza(Integer.parseInt(id), nome, Double.parseDouble(preco), descricao, imagem);
 
                 pizzas.add(pizza);
 
@@ -78,19 +78,20 @@ public class PizzaDao {
 
         }
     }
-    public static void updatePizza(Pizza pizza){
+
+    public static void updatePizza(Pizza pizza) {
         String SQL = "UPDATE PIZZA SET NOME = ?, PRECO = ?, DESCRICAO = ?, IMAGEM = ? WHERE IDPizza = ?";
 
         try {
-            Connection con = DriverManager.getConnection("jdbc:h2:~/test", "sa","sa");
+            Connection con = DriverManager.getConnection("jdbc:h2:~/test", "sa", "sa");
 
             System.out.println("success in database connection");
 
             PreparedStatement preparedStatement = con.prepareStatement(SQL);
 
-            preparedStatement.setString(1,pizza.getNome());
-            preparedStatement.setDouble(2,pizza.getPreco());
-            preparedStatement.setString(3,pizza.getDescricao());
+            preparedStatement.setString(1, pizza.getNome());
+            preparedStatement.setDouble(2, pizza.getPreco());
+            preparedStatement.setString(3, pizza.getDescricao());
             preparedStatement.setString(4, pizza.getImagePath());
             preparedStatement.setInt(5, pizza.getIDPizza());
 
@@ -99,10 +100,35 @@ public class PizzaDao {
             System.out.println("success in update pizza");
 
             con.close();
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             System.out.println("fail in database connection");
         }
     }
 
+    public void deletarPizza(String pizzaId) {
+        String SQL = "DELETE FROM PIZZA WHERE IDPIZZA = ? ";
+
+        try {
+
+            Connection con = DriverManager.getConnection("jdbc:h2:~/test", "sa", "sa");
+
+            System.out.println("success in database connection");
+
+            PreparedStatement preparedStatement = con.prepareStatement(SQL);
+            preparedStatement.setString(1, pizzaId);
+            preparedStatement.execute();
+
+            System.out.println("success on delete car with id: " + pizzaId);
+
+            con.close();
+
+        } catch (Exception e) {
+
+            System.out.println("Erro ao excluir a pizza com ID: " + pizzaId);
+            e.getMessage();
+            e.printStackTrace();
+
+        }
+
+    }
 }

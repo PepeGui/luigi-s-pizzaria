@@ -14,8 +14,10 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
-
-
+import javax.imageio.ImageIO;
+import java.awt.Graphics2D;
+import java.awt.image.BufferedImage;
+import java.io.*;
 import java.util.UUID;
 
 @WebServlet("/adicionar-pizza")
@@ -64,20 +66,26 @@ public class AdicionarPizzaServlet extends HttpServlet {
     }
 
     private String saveImageToServer(InputStream fileContent) throws IOException {
-
         String directory = getServletContext().getRealPath("/storage/");
 
         String imageName = UUID.randomUUID().toString() + ".jpg";
         File file = new File(directory, imageName);
 
+        BufferedImage originalImage = ImageIO.read(fileContent);
+        BufferedImage resizedImage = resizeImage(originalImage, 200, 200);
+
         try (OutputStream outputStream = new FileOutputStream(file)) {
-            byte[] buffer = new byte[1024];
-            int bytesRead;
-            while ((bytesRead = fileContent.read(buffer)) != -1) {
-                outputStream.write(buffer, 0, bytesRead);
-            }
+            ImageIO.write(resizedImage, "jpg", outputStream);
         }
 
         return "/storage/" + imageName;
+    }
+
+    private BufferedImage resizeImage(BufferedImage originalImage, int targetWidth, int targetHeight) {
+        BufferedImage resizedImage = new BufferedImage(targetWidth, targetHeight, BufferedImage.TYPE_INT_RGB);
+        Graphics2D graphics2D = resizedImage.createGraphics();
+        graphics2D.drawImage(originalImage, 0, 0, targetWidth, targetHeight, null);
+        graphics2D.dispose();
+        return resizedImage;
     }
 }

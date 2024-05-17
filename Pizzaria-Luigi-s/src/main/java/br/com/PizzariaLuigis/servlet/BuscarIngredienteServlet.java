@@ -21,6 +21,8 @@ import java.util.List;
 
             req.setAttribute("ingredientes", i);
 
-            req.getRequestDispatcher("/ADM/Estoque/Estoque.jsp").forward(req,resp);
+            System.out.println("patati");
+
+            req.getRequestDispatcher("ADM/Estoque/Estoque.jsp").forward(req,resp);
         }
     }

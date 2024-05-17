@@ -40,7 +40,7 @@ public class IngredienteDao {
 
     public List<Ingrediente> listarIngredientes(){
 
-        String SQL = "SELEC * FROM CAR";
+        String SQL = "SELECT * FROM INGREDIENTE";
 
         try{
             Connection con = DriverManager.getConnection("jdbc:h2:~/test", "sa","sa");
@@ -74,6 +74,31 @@ public class IngredienteDao {
             err.getMessage();
             err.printStackTrace();
             return Collections.emptyList();
+        }
+    }
+
+    public void deletarIngrediente(String ingredienteId){
+
+        String SQL = "DELETE FROM INGREDIENTE WHERE IDINGREDIENTE = ?";
+
+        try{
+
+            Connection con = DriverManager.getConnection("jdbc:h2:~/test", "sa","sa");
+
+            System.out.println("success in database connection");
+
+            PreparedStatement preparedStatement = con.prepareStatement(SQL);
+            preparedStatement.setString(1,ingredienteId);
+            preparedStatement.execute();
+
+            System.out.println("success on delete ingrediente with id: " + ingredienteId);
+
+            con.close();
+        }
+        catch (Exception e){
+            System.out.println("Erro ao excluir a ingrediente com ID: " + ingredienteId);
+            e.getMessage();
+            e.printStackTrace();
         }
     }
 

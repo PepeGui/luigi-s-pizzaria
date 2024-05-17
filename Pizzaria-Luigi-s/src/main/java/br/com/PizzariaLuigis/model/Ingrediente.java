@@ -2,9 +2,9 @@ package br.com.PizzariaLuigis.model;
 
 public class Ingrediente {
     private int IDIngrediente;
-    private String Nome;
-    private double QuantidadeEstoque;
-    private String Descricao;
+    private String nome;
+    private double quantidadeEstoque;
+    private String descricao;
 
 
     public Ingrediente(int idIngrediente) {
@@ -12,15 +12,15 @@ public class Ingrediente {
     }
     public Ingrediente() {this(0);}
     public Ingrediente(String nome, double qtd, String desc){
-        this.Nome = nome;
-        this.QuantidadeEstoque = qtd;
-        this.Descricao = desc;
+        this.nome = nome;
+        this.quantidadeEstoque = qtd;
+        this.descricao = desc;
     }
     public Ingrediente(int id,String nome, double qtd, String desc){
         this.IDIngrediente = id;
-        this.Nome = nome;
-        this.QuantidadeEstoque = qtd;
-        this.Descricao = desc;
+        this.nome = nome;
+        this.quantidadeEstoque = qtd;
+        this.descricao = desc;
     }
 
 
@@ -35,14 +35,14 @@ public class Ingrediente {
     }
 
     public String getNome() {
-        return Nome;
+        return nome;
     }
 
     public double getQuantidadeEstoque() {
-        return QuantidadeEstoque;
+        return quantidadeEstoque;
     }
 
     public String getDescricao() {
-        return Descricao;
+        return descricao;
     }
 }

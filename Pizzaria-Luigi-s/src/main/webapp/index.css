@@ -37,6 +37,11 @@ body {
     font-size: 32px;
 
 }
+.cabecalho-alto{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
 
 .cabecalho-baixo{
     display: flex;
@@ -59,7 +64,7 @@ body {
     align-items:center;
     background-image: url("./images/pizzaria.png");
     background-repeat: no-repeat;
-    background-size:
+    background-size: 100vw;
 }
 
 .introducao > p{
@@ -99,7 +104,8 @@ body {
 }
 .cardapio > div{
     display:flex;
-    flex-direction:wrap;
+    flex-direction:column;
+    flex-wrap:wrap;
     justify-content:space-evenly;
     width:85vw;
 }
@@ -124,6 +130,10 @@ form > button{
 
     border-radius: 20px;
     border:none;
+}
+.img-pizza{
+    width: 200px;
+    height: 200px;
 }
 
 .sobre-nos{

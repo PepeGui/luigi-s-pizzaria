@@ -18,6 +18,7 @@
     <header class="cabecalho">
         <div class="cabecalho-alto">
             <h2 id="titulo" class="texto-branco">Luigi's Pizzaria</h2>
+            <a href="/Carrinho/Carrinho.html"><img src="/images/Carrinho.png" alt=""></a>
         </div>
             <div class="cabecalho-baixo">
                 <div id="texto">
@@ -55,8 +56,9 @@
         <div>
         <c:forEach var="pizza" items="${pizzas}">
             <form action="/adicionar-item" method="post" enctype="multipart/form-data">
-                <img id="imagem" src="${pizza.imagePath}" alt="">
+                <img class="img-pizza" id="imagem" src="${pizza.imagePath}" alt="">
                 <h3 id="nome">${pizza.nome}</h3>
+                <p id="preco">R$ ${pizza.preco}</p>
                 <p id="descricao">${pizza.descricao}</p>
                 <input type="hidden" name="id" value="${pizza.IDPizza}">
                 <button type="submit">Adicionar</button>

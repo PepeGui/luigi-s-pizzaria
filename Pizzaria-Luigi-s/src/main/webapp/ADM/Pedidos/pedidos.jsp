@@ -29,7 +29,7 @@
 </tr>
 </table>
 
-<a href="./../AREA-ADM1/Area-adm1.html" class="sair">Sair</a>
+<a href="ADM/AREA-ADM1/Area-adm1.html" class="sair">Sair</a>
 </body>
 </html>
 

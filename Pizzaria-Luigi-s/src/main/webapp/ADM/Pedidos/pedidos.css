@@ -1,3 +1,11 @@
+@font-face {
+  font-family: 'font-inter';
+  src: url('/Fonts/Inter/Inter-VariableFont_sInt,wght.ttf');
+}
+
+p, h1, h2, h3, h4, a, button {
+  font-family: 'font-inter';
+}
 *{
 
 }

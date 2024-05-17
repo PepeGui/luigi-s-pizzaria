@@ -21,6 +21,7 @@ public class AdicionarIngredienteServlet extends HttpServlet {
                 String ingredienteNome = request.getParameter("nome-ingrediente");
                 String ingredienteQtdStr = request.getParameter("quantidade-ingrediente");
                 String ingredienteDescricao = request.getParameter("descricao-ingrediente");
+                String id = request.getParameter("id");
 
                 double ingredienteQtd = Double.parseDouble(ingredienteQtdStr);
 
@@ -28,7 +29,13 @@ public class AdicionarIngredienteServlet extends HttpServlet {
 
                 System.out.println(ingredienteNome + "\n" + ingredienteQtd + "\n" + ingredienteDescricao);
 
-                IngredienteDao.createIngrediente(i);
+                if (id == null || id.isBlank()) {
+                        IngredienteDao.createIngrediente(i);
+
+                } else {
+                        i.setIDIngrediente(Integer.parseInt(id));
+                        IngredienteDao.updateIngrediente(i);
+                }
 
                 request.getRequestDispatcher("/ADM/AREA-ADM1/Area-adm1.html").forward(request, response);
 

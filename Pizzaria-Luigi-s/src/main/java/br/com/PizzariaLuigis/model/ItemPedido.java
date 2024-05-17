@@ -2,9 +2,13 @@ package br.com.PizzariaLuigis.model;
 
 public class ItemPedido {
     private int ItemID;
-    private Pedido PedidoID;
-    private String NomeProduto;
-    private String Quantidade;
+    private Pedido pedidoID;
+    private String nomeProduto;
+    private String quantidade;
+
+    public ItemPedido(int pedidoID) {
+        this.setPedidoID(pedidoID);
+    }
 
     public int getItemID() {
         return ItemID;
@@ -15,26 +19,26 @@ public class ItemPedido {
     }
 
     public Pedido getPedidoID() {
-        return PedidoID;
+        return pedidoID;
     }
 
     public void setPedidoID(int pedidoID) {
-        this.PedidoID = new Pedido(pedidoID);
+        this.pedidoID = new Pedido(pedidoID);
     }
 
     public String getNomeProduto() {
-        return NomeProduto;
+        return nomeProduto;
     }
 
     public void setNomeProduto(String nomeProduto) {
-        NomeProduto = nomeProduto;
+        this.nomeProduto = nomeProduto;
     }
 
     public String getQuantidade() {
-        return Quantidade;
+        return quantidade;
     }
 
     public void setQuantidade(String quantidade) {
-        Quantidade = quantidade;
+        this.quantidade = quantidade;
     }
 }

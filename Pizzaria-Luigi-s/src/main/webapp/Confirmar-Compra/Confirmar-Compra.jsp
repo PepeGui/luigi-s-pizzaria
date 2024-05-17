@@ -1,12 +1,14 @@
 <!doctype html>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page contentType="text/html; charset=UTF-8" %>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="Confirma-Compra.css">
+    <title>Confirmar-Compra</title>
+    <link rel="stylesheet" href="/Confirmar-Compra/Confirmar-Compra.css">
 </head>
 <body>
 
@@ -20,26 +22,14 @@
             <th  class="th">Resumo</th>
 
             <th></th>
-
-
             <th></th>
         </tr>
 
-        <tr>
-            <td><img src="../images/pizza.png"></td>
-            <td>Pizza de Calabresa </td>
-
-        </tr>
-        <tr>
-            <td><img src="../images/pizza.png"></td>
-            <td>Pizza de Calabresa </td>
-
-        </tr>
-
-        <tr>
-            <td><img src="../images/Limonade.jpg"></td>
-            <td>Limonada </td>
-        </tr>
+        <c:forEach var="item" items="${items}">
+            <tr>
+                <td>${item.nomeProduto}</td>
+            </tr>
+        </c:forEach>
     </table>
 
     <div class=" inputs">
@@ -92,7 +82,7 @@
 
 <div class="botoes">
     <div>
-        <a href="/src/main/webapp/index.jsp">Sair</a>
+        <a href="/">Sair</a>
         <button  type="submit" class="btss">Confirmar</button>
     </div>
 

@@ -1,22 +1,23 @@
 @font-face {
-  font-family: font-inter;
-  src: url(/Fonts/Inter/Inter-VariableFont_sInt,wght.ttf);
+  font-family: 'font-great';
+  src: url('/Fonts/Great_Vibes/GreatVibes-Regular.ttf');
 }
 @font-face {
-  font-family: font-great;
-  src: url(/Fonts/Great_Vibes/GreatVibes-Regular.ttf);
+  font-family: 'font-inter';
+  src: url('/Fonts/Inter/Inter-VariableFont_slnt,wght.ttf');
 }
 
+p, h1, h2, h3, h4, a, button {
+  font-family: 'font-inter';
+}
 * {
     //border: green 1px solid;
 
 }
-titulo{
-    font-family: font-great;
+#titulo {
+  font-family: 'font-great';
 }
-p h2 h3 h4{
-   font-family: font-inter;
-}
+
 body {
     background-color: #D7D7D7;
     margin: 0px;
@@ -41,6 +42,7 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
 }
 
 .cabecalho-baixo{
@@ -104,20 +106,19 @@ body {
 }
 .cardapio > div{
     display:flex;
-    flex-direction:column;
+    flex-direction:row;
     flex-wrap:wrap;
     justify-content:space-evenly;
     width:85vw;
+
 }
-form{
+.pizzas{
     display:flex;
     flex-direction:column;
     align-items:center;
-
     text-align:center;
-
     width:235px;
-
+    margin: 5px;
 }
 form > button{
     background-color: #A91C1C;

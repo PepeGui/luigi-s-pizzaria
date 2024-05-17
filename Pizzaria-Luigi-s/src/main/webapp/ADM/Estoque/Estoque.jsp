@@ -27,7 +27,7 @@
             <td id="descricao">${ingrediente.descricao}</td>
             <input type="hidden" name="id" value="${ingrediente.IDIngrediente}">
             <td>
-                <a href=href="/ADM/EditarIngrediente/EditarIngrediente.jsp?id=${ingrediente.IDIngrediente}&nome=${ingrediente.nome}&quantidade=${ingrediente.quantidadeEstoque}&descricao=${ingrediente.descricao}">
+                <a href="/ADM/EditarIngrediente/EditarIngrediente.jsp?id=${ingrediente.IDIngrediente}&nome=${ingrediente.nome}&quantidade=${ingrediente.quantidadeEstoque}&descricao=${ingrediente.descricao}">
                     <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                         <rect x="0.00317383" width="60" height="60" fill="url(#pattern0_403_55)"/>
                         <defs>
@@ -50,7 +50,7 @@
 </table>
 <div>
     <a href="/ADM/AREA-ADM1/Area-adm1.html"><button>Sair</button></a>
-    <a href="/ADM/AdicionarIngrediente/AdicionarIngrediente.html"><button class="sherek">adicionar</button></a>
+    <a href="/ADM/AdicionarIngrediente/AdicionarIngrediente.html"><button class="sherek">Adicionar</button></a>
 </div>
 </body>
 </html>

@@ -21,18 +21,19 @@
 
             <div class="input-box">
                 <label>Nome</label>
-                <input type="text" name="nome-ingrediente" id="nome-ingrediente"/>
+                <input type="text" name="nome-ingrediente" id="nome-ingrediente" value="${param.nome}"/>
             </div>
 
             <div class="input-box">
                 <label>Quantidade</label>
-                <input type="text" name="quantidade-ingrediente" id="quantidade-ingrediente"/>
+                <input type="text" name="quantidade-ingrediente" id="quantidade-ingrediente" value="${param.quantidade}"/>
             </div>
 
             <div class="input-box">
                 <label>Descrição</label>
-                <input type="text" name="descricao-ingrediente" id="descricao-ingrediente"/>
+                <input type="text" name="descricao-ingrediente" id="descricao-ingrediente" value="${param.descricao}"/>
             </div>
+            <input type="hidden" id="id" name="id" value="${param.id}">
 
         </div>
 

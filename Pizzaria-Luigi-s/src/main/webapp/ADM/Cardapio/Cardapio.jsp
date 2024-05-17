@@ -49,7 +49,7 @@
 </table>
 <div>
     <a href="/ADM/AREA-ADM1/Area-adm1.html"><button>Sair</button></a>
-    <a href="/ADM/AdicionarPizza/AdicionarPizza.html"><button  class="sherek">adicionar</button></a>
+    <a href="/ADM/AdicionarPizza/AdicionarPizza.html"><button  class="sherek">Adicionar</button></a>
 </div>
 </body>
 </html>

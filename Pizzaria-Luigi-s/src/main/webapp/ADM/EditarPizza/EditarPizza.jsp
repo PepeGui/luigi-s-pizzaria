@@ -11,7 +11,7 @@
 <body>
 
 <div id="txt">
-    <h2>Adicionar Pizza</h2>
+    <h2>Editar Pizza</h2>
 </div>
 
 <form action="/adicionar-pizza" method="post" enctype="multipart/form-data">

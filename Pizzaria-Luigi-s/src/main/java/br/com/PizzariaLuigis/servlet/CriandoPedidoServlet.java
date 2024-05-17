@@ -9,10 +9,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.List;
+
 
 @WebServlet("/criar-pedido")
 public class CriandoPedidoServlet extends HttpServlet {
+
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Pedido pedido = new Pedido();
@@ -21,6 +22,10 @@ public class CriandoPedidoServlet extends HttpServlet {
         String idPizza = request.getParameter("idPizza");
         String idPedido = request.getParameter("idPedido");
         String nomePizza = request.getParameter("nome");
+
+        System.out.println("id pizza " + idPizza);
+        System.out.println("id pedido " + idPedido);
+        System.out.println("nome pizza " + nomePizza);
 
         if(idPedido == null || idPedido.isBlank()){
 

@@ -1,7 +1,7 @@
 package br.com.PizzariaLuigis.dao;
 
+import br.com.PizzariaLuigis.model.ItemPedido;
 import br.com.PizzariaLuigis.model.Pedido;
-import br.com.PizzariaLuigis.model.Pizza;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -55,7 +55,7 @@ public class PedidoDao {
 
     public Pedido BuscarPedidoPorId(int pId) {
 
-        String SQL = "SELECT * FROM PEDIDO WHERE PedidoID = ?";
+        String SQL = "SELECT * FROM PEDIDO WHERE PEDIDOID = ?";
 
         try {
 
@@ -66,23 +66,35 @@ public class PedidoDao {
 
             preparedStatement.setInt(1,pId);
 
+
             ResultSet resultSet = preparedStatement.executeQuery();
 
+            List<Pedido> pedidos = new ArrayList<>();
 
-            String id = resultSet.getString("PedidoID");
-            String idCliente = resultSet.getString("ClienteID");
-            String status = resultSet.getString("Status");
+            while (resultSet.next()) {
 
-            Pedido pedido = new Pedido(Integer.parseInt(id),Integer.parseInt(idCliente),status);
+                String id = resultSet.getString("PedidoID");
+                //String idCliente = resultSet.getString("ClienteID");
+                String status = resultSet.getString("Status");
 
+                Pedido ped = new Pedido(Integer.parseInt(id),status);
 
-            System.out.println("success in busca");
+                pedidos.add(ped);
+
+            }
+
+            Pedido pedido = new Pedido();
+            pedido = pedidos.get(0);
+
+            System.out.println("success in busca pedido por id porra");
             connection.close();
             return pedido;
 
         } catch (Exception e) {
 
-            System.out.println("fail in database connection");
+            e.getMessage();
+            e.getStackTrace();
+            System.out.println("fail in database connection buscar pedido por id");
 
             return new Pedido();
 
@@ -112,6 +124,8 @@ public class PedidoDao {
         }
         catch (Exception e){
             System.out.println("fail in database connection");
+            e.getMessage();
+            e.getStackTrace();
         }
     }
     public Pedido createPedido(){
@@ -138,6 +152,8 @@ public class PedidoDao {
         }
         catch (Exception e){
             System.out.println("fail in database connection insert pedido");
+            e.getMessage();
+            e.getStackTrace();
             return new Pedido();
 
         }
@@ -159,6 +175,7 @@ public class PedidoDao {
 
             System.out.println("passou aqui 1");
             List<Pedido> pedidos = new ArrayList<>();
+
             while (resultSet.next()) {
 
                 String id = resultSet.getString("PedidoID");
@@ -181,7 +198,8 @@ public class PedidoDao {
         } catch (Exception e) {
 
             System.out.println("fail in database connection busca pedido Criado");
-
+            e.getMessage();
+            e.getStackTrace();
             return new Pedido();
 
         }
@@ -210,6 +228,50 @@ public class PedidoDao {
         }
         catch (Exception e){
             System.out.println("fail in database connection insert item pedido");
+            e.getMessage();
+            e.getStackTrace();
+        }
+    }
+
+    public List<ItemPedido> BuscarItemPedido(int idPedido){
+
+        String SQL = "SELECT * FROM ITEMPEDIDO WHERE PEDIDOID = ?";
+
+        try {
+
+            Connection connection = DriverManager.getConnection("jdbc:h2:~/test", "sa", "sa");
+            System.out.println("success in database connection");
+
+            PreparedStatement preparedStatement = connection.prepareStatement(SQL);
+
+            preparedStatement.setInt(1, idPedido);
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            List<ItemPedido> itens = new ArrayList<>();
+
+            while (resultSet.next()) {
+
+                String id = resultSet.getString("PedidoID");
+                String nomeProduto = resultSet.getString("nomeProduto");
+
+                ItemPedido item = new ItemPedido(Integer.parseInt(id));
+                item.setNomeProduto(nomeProduto);
+
+                itens.add(item);
+
+            }
+
+            System.out.println("success in busca item pedido");
+            connection.close();
+            return itens;
+
+        } catch (Exception e) {
+
+            System.out.println("fail in database connection");
+            e.getMessage();
+            e.getStackTrace();
+            return Collections.emptyList();
 
         }
     }

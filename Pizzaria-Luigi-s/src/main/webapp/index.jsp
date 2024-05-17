@@ -18,7 +18,7 @@
     <header class="cabecalho">
         <div class="cabecalho-alto">
             <h2 id="titulo" class="texto-branco">Luigi's Pizzaria</h2>
-            <a href="/Carrinho/Carrinho.html"><img src="/images/Carrinho.png" alt=""></a>
+            <a href="/find-all-items?id=${pedido.pedidoID}"><img src="/images/Carrinho.png" alt=""></a>
         </div>
             <div class="cabecalho-baixo">
                 <div id="texto">
@@ -55,16 +55,20 @@
         <h2>Cardapio</h2>
         <div>
         <c:forEach var="pizza" items="${pizzas}">
-            <form action="/criar-pedido" method="post" enctype="multipart/form-data">
-                <img class="img-pizza" id="imagem" src="${pizza.imagePath}" alt="">
-                <h3 id="nome">${pizza.nome}</h3>
-                <p id="preco">R$ ${pizza.preco}</p>
-                <p id="descricao">${pizza.descricao}</p>
-                <input type="hidden" name="idPizza" value="${pizza.IDPizza}">
-                <input type="hidden" name="nome" value="${pizza.nome}">
-                <input type="hidden" name="idPedido" value="${pedido.pedidoID}">
-                <button type="submit">Adicionar</button>
-            </form>
+                <div class="pizzas">
+                    <img class="img-pizza" id="imagem" src="${pizza.imagePath}" alt="">
+                    <h3 id="nome">${pizza.nome}</h3>
+                    <p id="preco">R$ ${pizza.preco}</p>
+                    <p id="descricao">${pizza.descricao}</p>
+
+                        <form action="/criar-pedido" method="post">
+                            <input type="hidden" name="idPizza" value="${pizza.IDPizza}">
+                            <input type="hidden" name="nome" value="${pizza.nome}">
+                            <input type="hidden" id="idPedido" name="idPedido" value="${pedido.pedidoID}">
+
+                            <button type="submit">Adicionar</button>
+                        </form>
+                </div>
         </c:forEach>
         </div>
     </section>

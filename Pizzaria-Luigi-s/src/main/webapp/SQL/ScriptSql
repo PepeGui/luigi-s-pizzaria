@@ -36,7 +36,7 @@ create table ItemPedido (
 INSERT INTO ItemPedido (ItemID, PedidoID, NomeProduto, Quantidade)
 VALUES (01, 01, 'Pizza de Pepperoni', 01),
        (02, 01, 'Pizza de Calabresa', 01),
-       (03, 01, 'Coca 2L', 01);
+
 
 ---------------------------------------------------------------------------
 create table Usuarios (
@@ -46,17 +46,8 @@ create table Usuarios (
     PRIMARY KEY (ID)
 );
 
-INSERT INTO Usuarios (NomeUsuario, Senha) VALUES ('Roberto', 'pizza_legal');
-
-SELECT * FROM Usuarios WHERE NomeUsuario = 'nome_inserido' AND Senha = 'senha_inserida';
 --------------------------------------------------------------------------------------------
 
-create table Carrinho (
-    IDPedido INT AUTO_INCREMENT PRIMARY KEY,
-    FormaPagamento VARCHAR(50),
-    FOREIGN KEY (IDPedido) REFERENCES Pedido(IDPedido)
-);
---------------------------------------
 CREATE TABLE Pizza (
     IDPizza INT AUTO_INCREMENT PRIMARY KEY ,
     Nome VARCHAR(50),
@@ -80,19 +71,3 @@ CREATE TABLE Pizza_Ingrediente (
     FOREIGN KEY (IDIngrediente) REFERENCES Ingrediente(IDIngrediente)
 );
 ---------------------------------
-create table Bebida (
-   IDBebida INT AUTO_INCREMENT PRIMARY KEY,
-   Preco float,
-   Descricao VARCHAR(400)
-);
-
--------------------------------------
-create table Estoque (
-  IDEstoque INT AUTO_INCREMENT PRIMARY KEY,
-  IDIngrediente INT,
-  Quantidade INT,
-  DataAtualizacao DATE,
-  FOREIGN KEY (IDIngrediente) REFERENCES Ingrediente(IDIngrediente)
-
-);
-.

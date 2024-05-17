@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.util.List;
 
 @WebServlet("/find-all-pedidos")
-public class PedidoServlet extends HttpServlet{
+public class BuscarPedidoServlet extends HttpServlet{
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 

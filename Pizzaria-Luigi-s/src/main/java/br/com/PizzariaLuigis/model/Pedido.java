@@ -1,9 +1,9 @@
 package br.com.PizzariaLuigis.model;
 
 public class Pedido {
-    private int PedidoID;
-    private Cliente ClienteID;
-    private String Status;
+    private int pedidoID;
+    private Cliente clienteID;
+    private String status;
 
     public Pedido(int pedidoID) {
         this.setPedidoID(pedidoID);
@@ -11,8 +11,7 @@ public class Pedido {
 
     public Pedido() {this(0);}
 
-    public Pedido(int pedidoID, int clienteID, String
-                  status) {
+    public Pedido(int pedidoID, int clienteID, String status) {
         this.setPedidoID(pedidoID);
         this.setClienteID(clienteID);
         this.setStatus(status);
@@ -25,26 +24,26 @@ public class Pedido {
     }
 
     public int getPedidoID() {
-        return PedidoID;
+        return pedidoID;
     }
 
     public void setPedidoID(int pedidoID) {
-        PedidoID = pedidoID;
+        this.pedidoID = pedidoID;
     }
 
     public Cliente getClienteID() {
-        return ClienteID;
+        return clienteID;
     }
 
     public void setClienteID(int clienteID) {
-        ClienteID = new Cliente(clienteID);
+        this.clienteID = new Cliente(clienteID);
     }
 
     public String getStatus() {
-        return Status;
+        return status;
     }
 
     public void setStatus(String status) {
-        Status = status;
+        this.status = status;
     }
 }

@@ -9,10 +9,18 @@ public class Pedido {
         this.setPedidoID(pedidoID);
     }
 
+    public Pedido() {this(0);}
+
     public Pedido(int pedidoID, int clienteID, String
                   status) {
         this.setPedidoID(pedidoID);
         this.setClienteID(clienteID);
+        this.setStatus(status);
+    }
+
+    public Pedido(int pedidoID, String
+            status) {
+        this.setPedidoID(pedidoID);
         this.setStatus(status);
     }
 

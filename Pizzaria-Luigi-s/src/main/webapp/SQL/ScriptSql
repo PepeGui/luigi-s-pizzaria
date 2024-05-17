@@ -16,13 +16,13 @@ VALUES (068, 'ROBSON', '12345678910', '(11) 98736-6621', 'AV Santo Amaro', 25, '
 CREATE TABLE Pedido (
     PedidoID INT AUTO_INCREMENT PRIMARY KEY,
     ClienteID INT,
-    DataPedido DATE,
+    Status VARCHAR(50),
     FOREIGN KEY (ClienteID) REFERENCES Cliente(ClienteID)
 );
 
 
-INSERT INTO Pedido (PedidoID, ClienteID, DataPedido)
-VALUES (068, 01, '16/09/2024');
+INSERT INTO Pedido (PedidoID, ClienteID, Status)
+VALUES (068, 01, 'Pedido Realzado');
 
 -------------------------------------------------------------
 create table ItemPedido (

@@ -55,12 +55,14 @@
         <h2>Cardapio</h2>
         <div>
         <c:forEach var="pizza" items="${pizzas}">
-            <form action="/adicionar-item" method="post" enctype="multipart/form-data">
+            <form action="/criar-pedido" method="post" enctype="multipart/form-data">
                 <img class="img-pizza" id="imagem" src="${pizza.imagePath}" alt="">
                 <h3 id="nome">${pizza.nome}</h3>
                 <p id="preco">R$ ${pizza.preco}</p>
                 <p id="descricao">${pizza.descricao}</p>
-                <input type="hidden" name="id" value="${pizza.IDPizza}">
+                <input type="hidden" name="idPizza" value="${pizza.IDPizza}">
+                <input type="hidden" name="nome" value="${pizza.nome}">
+                <input type="hidden" name="idPedido" value="${pedido.pedidoID}">
                 <button type="submit">Adicionar</button>
             </form>
         </c:forEach>

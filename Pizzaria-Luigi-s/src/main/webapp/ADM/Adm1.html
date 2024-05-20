@@ -1,36 +1,51 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="/ADM/Adm1.css">
+    <link rel="stylesheet" type="text/css" href="Adm1.css">
+    <script src="Adm1.js"></script>
     <link rel="stylesheet" href="/ADM/cssReset/reset.css">
     <link href='https://fonts.googleapis.com/css?family=Irish Grover' rel='stylesheet'>
 </head>
 <body>
-
+<h1>Luigi's Pizzaria</h1>
 <div class="cabecalho">
-    <h1>Luigi's Pizzaria</h1>
-    <h2>DATA DE HOJE</h2>
-    <img src="PizzariaAdm1s.png" />
+    <div class="data" id="data"></div>
+    <div class="relogio">
+        <span id="horas">00</span>
+        <span>:</span>
+        <span id="minutos">00</span>
+        <span>:</span>
+        <span id="segundos">00</span>
+    </div>
+
+
 </div>
 
 <div class="login">
-    <h3>BEM-VINDO AO GERENCIAMENTO DE PEDIDOS DA LUIGI'S PIZZARIA</h3>
-    <h4>Login do ADM</h4>
 
-    <form action="/login-Adm" method="post">
-        <div class="input">
-            <label for="user">Usuario:</label>
-            <input type="text" id="user" name="user">
-        </div>
-        <div class="input">
-            <label for="pass">Senha:</label>
-            <input type="password" id="pass" name="pass">
-        </div>
+    <section class="container">
+        <form action="/login-Adm" method="post">
+            <h4>ADM</h4>
 
-        <button class="botao" type="submit">Login</button>
 
-    </form>
+            <div class="input">
+
+                <input type="text" placeholder="Usuario" required>
+            </div>
+            <div class="input">
+
+                <input type="password" placeholder="Senha" required>
+            </div>
+
+            <button class="botao" type="submit">Login</button>
+
+        </form>
+    </section>
 
 </div>
 
 </body>
+
+
+
+

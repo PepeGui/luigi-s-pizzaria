@@ -1,5 +1,6 @@
 
 <html lang="en">
+<%@ page contentType="text/html; charset=UTF-8" %>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"

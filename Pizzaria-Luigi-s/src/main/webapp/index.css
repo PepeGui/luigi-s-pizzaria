@@ -36,13 +36,17 @@ body {
 }
 .cabecalho > h2{
     font-size: 32px;
-
+    margin: 5px;
 }
 .cabecalho-alto{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+}
+
+.cabecalho-alto > a{
+    margin: 5px;
 }
 
 .cabecalho-baixo{
@@ -168,8 +172,10 @@ footer > img{
     width:50vw;
 }
 .rodape-dir{
+
     display:flex;
     flex-direction:row;
     justify-content:space-around;
     width:15vw;
+
 }

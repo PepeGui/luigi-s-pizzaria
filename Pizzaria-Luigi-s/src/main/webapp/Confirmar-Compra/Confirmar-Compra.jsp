@@ -32,40 +32,44 @@
         </c:forEach>
     </table>
 
-    <div class=" inputs">
 
-        <div class="input-box">
-            <h4>Nome:</h4>
-            <input type="text" name="nome" size="40">
-        </div>
+        <form id="form" action="/criar-cliente" method="post" >
 
-        <div class="input-box">
-            <h4>CPF:</h4>
-            <input type="text" name="CPF" size="40">
-        </div>
+        <div class=" inputs">
 
-        <div class="input-box">
-            <h4>Telefone:</h4>
-            <input type="text" name="Telefone" size="40">
-        </div>
+            <div class="input-box">
+                <h4>Nome:</h4>
+                <input type="text" name="nome-cliente" id="nome-cliente" size="40">
+            </div>
 
-        <div class="input-box">
-            <h4>Endereço:</h4>
-            <input type="text" name="Endereço" size="40">
-        </div>
+            <div class="input-box">
+                <h4>CPF:</h4>
+                <input type="text" name="cpf-cliente" id="cpf-cliente" size="40">
+            </div>
 
-        <div class="input-box">
-            <h4>Nº</h4>
-            <input type="text" name="Nº" size="40">
-        </div>
+            <div class="input-box">
+                <h4>Telefone:</h4>
+                <input type="text" name="telefone" id="telefone" size="40">
+            </div>
 
-        <div class="input-box">
-            <h4>Cep</h4>
-            <input type="text" name="Cep" size="40">
-        </div>
+            <div class="input-box">
+                <h4>Endereço:</h4>
+                <input type="text" name="endereco" id="endereco" size="40">
+            </div>
 
-    </div>
+            <div class="input-box">
+                <h4>Nº</h4>
+                <input type="text" name="numero" id="numero" size="40">
+            </div>
 
+            <div class="input-box">
+                <h4>Cep</h4>
+                <input type="text" name="cep" id="cep" size="40">
+            </div>
+
+       </div>
+
+    </form>
 
 </section>
 
@@ -83,7 +87,7 @@
 <div class="botoes">
     <div>
         <a href="/">Sair</a>
-        <button  type="submit" class="btss">Confirmar</button>
+        <button form="form" type="submit" class="btss">Confirmar</button>
     </div>
 
 </div>

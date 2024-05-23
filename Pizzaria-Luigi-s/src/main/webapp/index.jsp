@@ -87,7 +87,7 @@
         <div class="rodape-esq">
             <img src="./images/Email.png" alt="">
             <p>pizzaria@gmail.com</p>
-            <img src="./images/Instagram.png" alt="">
+            <a href="/ADM/Adm1.html" ><img src="./images/Instagram.png" alt=""></a>
             <p>@Pizza</p>
             <img src="./images/TwitterX.png" alt="">
             <p>@Pizza</p>

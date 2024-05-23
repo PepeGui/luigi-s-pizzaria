@@ -32,7 +32,7 @@ body {
     flex-direction: column;
     justify-content: space-between;
     height: 124px;
-    background-color: #CC0101;
+   background: linear-gradient(to right, #ff0101, #490101);
 }
 .cabecalho > h2{
     font-size: 32px;
@@ -52,7 +52,7 @@ body {
 .cabecalho-baixo{
     display: flex;
     flex-direction: row;
-    background-color: #A91C1C;
+    background: linear-gradient(to right, #ff0101, #490101);
 }
 
 #texto{

@@ -16,7 +16,9 @@ h1 {
 
 display:flex;
 justify-content: center;
-
+color:white;
+background: linear-gradient(to right, #ff0101, #490101);
+width:100vw;
 }
 
 .bt {

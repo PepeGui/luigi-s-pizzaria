@@ -55,9 +55,9 @@ input-box>input{
     width: 30vw;
 }
 table{
-
+    background-color:white;
     width: 35vw;
-    border-radius: 10px;
+    border-radius: 15px;
     border-collapse: separate;
 
 }

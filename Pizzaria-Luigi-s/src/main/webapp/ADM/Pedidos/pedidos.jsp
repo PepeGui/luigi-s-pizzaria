@@ -18,7 +18,7 @@
     <c:forEach var="pedido" items="${pedidos}">
          <tr>
              <td id="id">${pedido.pedidoID}</td>
-             <td id="itens">Itens do Pedido</td>
+             <td id="itens"><a href="/find-detalhes?id=${pedido.pedidoID}">Itens do Pedido</a></td>
              <td id="status">${pedido.status}</td>
              <input type="hidden" id="id" name="id" value="{pedido.pedidoID}">
              <td><a href="/mudarStatus-pedido?id=${pedido.pedidoID}&status=1"><button type="submit" class="bt">Cancelar</button></a></td>

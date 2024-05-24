@@ -3,7 +3,7 @@
   src: url('/Fonts/Inter/Inter-VariableFont_sInt,wght.ttf');
 }
 
-p, h1, h2, h3, h4, a, button {
+p, h1, h2, h3, h4, a {
   font-family: 'font-inter';
 }
 

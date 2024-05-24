@@ -21,6 +21,15 @@ public class Cliente {
         this.cpf = cpf;
         this.nome = nome;
     }
+    public Cliente(int clienteID,String cep, int numero, String endereco, String telefone, String cpf, String nome) {
+        this.clienteID = clienteID;
+        this.cep = cep;
+        this.numero = numero;
+        this.endereco = endereco;
+        this.telefone = telefone;
+        this.cpf = cpf;
+        this.nome = nome;
+    }
 
     public Cliente() {this(0);}
 
@@ -44,8 +53,8 @@ public class Cliente {
         return cpf;
     }
 
-    public void setCPF(String CPF) {
-        this.cpf = CPF;
+    public void setCPF(String cpf) {
+        this.cpf = cpf;
     }
 
     public String getTelefone() {
@@ -76,7 +85,7 @@ public class Cliente {
         return cep;
     }
 
-    public void setCEP(String CEP) {
-        this.cep = CEP;
+    public void setCEP(String cep) {
+        this.cep = cep;
     }
 }

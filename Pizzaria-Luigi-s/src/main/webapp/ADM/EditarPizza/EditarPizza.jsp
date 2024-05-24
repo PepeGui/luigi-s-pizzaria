@@ -30,10 +30,7 @@
                 <input type="text" name="preco-pizza" id="preco-pizza" value="${param.preco}"/>
             </div>
 
-            <div class="input-box">
-                <label>Ingredientes</label>
-                <input type="text" name="ingredientes-pizza" id="ingredientes-pizza"/>
-            </div>
+
 
             <div class="input-box">
                 <label>Descrição</label>

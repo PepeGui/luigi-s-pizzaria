@@ -1,6 +1,6 @@
 <!doctype html>
-<!--<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page contentType="text/html; charset=UTF-8" %>-->
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page contentType="text/html; charset=UTF-8" %>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,7 +8,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Detalhes do Pedido</title>
-    <link rel="stylesheet" href="Detalhes.css">
+    <link rel="stylesheet" href="/ADM/Detalhes-Pedido/Detalhes.css">
 </head>
 <body>
 
@@ -24,52 +24,46 @@
 
         </tr>
 
-        <!--<c:forEach var="item" items="${items}">
+        <c:forEach var="item" items="${items}">
             <tr>
                 <td>${item.nomeProduto}</td>
             </tr>
-        </c:forEach>-->
+        </c:forEach>
     </table>
 
-
-    <form id="form" action="/criar-cliente" method="post" >
+    <c:forEach var="cliente" items="${clientes}">
+    <form id="form" >
 
         <div class=" inputs">
 
             <div class="input-box">
                 <h4>Nome:</h4>
-                <input type="text" name="nome-cliente" id="nome-cliente" size="40">
+                <input type="text" name="nome-cliente" id="nome-cliente" value="${cliente.nome}" size="40">
             </div>
 
-            <div class="input-box">
-                <h4>CPF:</h4>
-                <input type="text" name="cpf-cliente" id="cpf-cliente" size="40">
-            </div>
+
 
             <div class="input-box">
                 <h4>Telefone:</h4>
-                <input type="text" name="telefone" id="telefone" size="40">
+                <input type="text" name="telefone" id="telefone" value="${cliente.telefone}" size="40">
             </div>
 
             <div class="input-box">
                 <h4>Endereço:</h4>
-                <input type="text" name="endereco" id="endereco" size="40">
+                <input type="text" name="endereco" id="endereco" value="${cliente.endereco}" size="40">
             </div>
 
             <div class="input-box">
                 <h4>Nº</h4>
-                <input type="text" name="numero" id="numero" size="40">
+                <input type="text" name="numero" id="numero" value="${cliente.numero}" size="40">
             </div>
 
-            <div class="input-box">
-                <h4>Cep</h4>
-                <input type="text" name="cep" id="cep" size="40">
-            </div>
+            
 
         </div>
 
     </form>
-
+    </c:forEach>
 </section>
 
 
@@ -78,7 +72,7 @@
 
 <div class="botoes">
     <div>
-        <a href="/">Sair</a>
+        <a href="/find-all-pedidos">Sair</a>
     </div>
 
 </div>

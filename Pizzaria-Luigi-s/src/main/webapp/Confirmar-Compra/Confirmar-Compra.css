@@ -3,7 +3,7 @@
   src: url('/Fonts/Inter/Inter-VariableFont_sInt,wght.ttf');
 }
 
-p, h2, h3, h4 {
+p, h1, h2, h3, h4, a {
   font-family: 'font-inter';
 }
  * {
@@ -86,7 +86,7 @@ display:flex;
 justify-content:flex-end;
 width: 100vw;
 height:7vh;
-background-color: transparent ;
+background-color: transparent;
 }
 
 .sub > div{

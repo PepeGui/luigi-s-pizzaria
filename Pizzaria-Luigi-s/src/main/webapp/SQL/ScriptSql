@@ -41,8 +41,8 @@ VALUES (01, 01, 'Pizza de Pepperoni', 01),
 ---------------------------------------------------------------------------
 create table Usuarios (
     ID int NOT NULL AUTO_INCREMENT,
-    NomeUsuario varchar(50) NOT NULL,
-    Senha varchar(50) NOT NULL,
+    NomeUsuario varchar(50),
+    Senha varchar(50),
     PRIMARY KEY (ID)
 );
 

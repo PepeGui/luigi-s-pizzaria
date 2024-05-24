@@ -1,6 +1,7 @@
 package br.com.PizzariaLuigis.dao;
 
 import br.com.PizzariaLuigis.model.Cliente;
+import br.com.PizzariaLuigis.model.ItemPedido;
 import br.com.PizzariaLuigis.model.Pedido;
 
 import java.sql.Connection;
@@ -46,7 +47,7 @@ public class ClienteDao {
     }
     public Cliente BuscarCLienteCriado() {
 
-        String SQL = "SELECT TOP 1* FROM CLIENTE ORDER BY CLIENTEID DESC ";
+        String SQL = "SELECT TOP 1* FROM CLIENTE ORDER BY CLIENTEID DESC";
 
         try {
 
@@ -65,6 +66,54 @@ public class ClienteDao {
 
 
                 Cliente c = new Cliente(Integer.parseInt(idCliente));
+
+                clientes.add(c);
+
+            }
+            Cliente cli = new Cliente();
+            cli = clientes.get(0);
+
+            System.out.println("success in busca pedido Criado");
+            connection.close();
+            return cli;
+
+        } catch (Exception e) {
+
+            System.out.println("fail in database connection busca pedido Criado");
+            e.getMessage();
+            e.getStackTrace();
+            return new Cliente();
+
+        }
+    }
+    public Cliente BuscarCliente(int idCliente){
+
+        String SQL = "SELECT * FROM CLIENTE WHERE CLIENTEID = ?";
+
+        try {
+
+            Connection connection = DriverManager.getConnection("jdbc:h2:~/test", "sa", "sa");
+            System.out.println("success in database connection");
+
+            PreparedStatement preparedStatement = connection.prepareStatement(SQL);
+
+            preparedStatement.setInt(1, idCliente);
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            List<Cliente> clientes = new ArrayList<>();
+
+            while (resultSet.next()) {
+
+                String id = resultSet.getString("ClienteID");
+                String nome = resultSet.getString("Nome");
+                String cpf = resultSet.getString("CPF");
+                String endereco = resultSet.getString("Endereco");
+                String telefone = resultSet.getString("Telefone");
+                String cep = resultSet.getString("CEP");
+                String numero = resultSet.getString("Numero");
+
+                Cliente c = new Cliente(Integer.parseInt(id),cep,Integer.parseInt(numero),endereco,telefone,cpf,nome);
 
                 clientes.add(c);
 

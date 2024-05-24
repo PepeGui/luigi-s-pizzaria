@@ -2,7 +2,7 @@ package br.com.PizzariaLuigis.model;
 
 public class Pedido {
     private int pedidoID;
-    private Cliente clienteID;
+    private int clienteID;
     private String status;
 
     public Pedido(int pedidoID) {
@@ -31,12 +31,12 @@ public class Pedido {
         this.pedidoID = pedidoID;
     }
 
-    public Cliente getClienteID() {
+    public int getClienteID() {
         return clienteID;
     }
 
     public void setClienteID(int clienteID) {
-        this.clienteID = new Cliente(clienteID);
+        this.clienteID = clienteID;
     }
 
     public String getStatus() {

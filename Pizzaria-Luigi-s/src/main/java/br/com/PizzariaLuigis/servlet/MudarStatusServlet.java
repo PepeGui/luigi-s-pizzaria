@@ -23,10 +23,10 @@ public class MudarStatusServlet extends HttpServlet {
         String status = request.getParameter("status");
 
         Pedido p = new Pedido(Integer.parseInt(id));
-        if(Integer.parseInt(status) == 1){
-            PedidoDao.updatePedido(p,true);
+        if(Integer.parseInt(status) == 2){
+            PedidoDao.updatePedido(p,"Pedido Confirmado");
         }else{
-            PedidoDao.updatePedido(p,false);
+            PedidoDao.updatePedido(p,"Pedido Cancelado");
         }
 
         request.getRequestDispatcher("/find-all-pedidos").forward(request, response);

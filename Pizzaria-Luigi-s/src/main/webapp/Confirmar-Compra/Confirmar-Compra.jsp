@@ -33,7 +33,7 @@
     </table>
 
 
-        <form id="form" action="/criar-cliente" method="post" >
+        <form id="form" action="/fechar-pedido" method="post" >
 
         <div class=" inputs">
 
@@ -68,7 +68,7 @@
             </div>
 
        </div>
-
+            <input type="hidden" id="id" name="id" value="${id}">
     </form>
 
 </section>
@@ -78,8 +78,7 @@
 <div class="sub">
 
     <div>
-        <p>SubTotal</p>
-        <p>R$117,00</p>
+        <p>ID do Pedido: ${id}</p>
     </div>
 
 </div>

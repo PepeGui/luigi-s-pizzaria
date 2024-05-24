@@ -1,6 +1,7 @@
 package br.com.PizzariaLuigis.dao;
 
 import br.com.PizzariaLuigis.model.Cliente;
+import br.com.PizzariaLuigis.model.Pedido;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -12,7 +13,7 @@ import java.util.List;
 
 public class ClienteDao {
 
-    public static void createCliente(Cliente cliente){
+    public Cliente createCliente(Cliente cliente){
 
         String SQL = "INSERT INTO CLIENTE (NOME, CPF, TELEFONE, ENDERECO, NUMERO, CEP) VALUES (?,?,?,?,?,?)";
 
@@ -33,11 +34,55 @@ public class ClienteDao {
             preparedStatement.execute();
 
             System.out.println("success on insert client");
+
+            return this.BuscarCLienteCriado();
         }
         catch (Exception err){
             System.out.println("fail in client insertion");
             err.getMessage();
             err.printStackTrace();
+            return new Cliente();
+        }
+    }
+    public Cliente BuscarCLienteCriado() {
+
+        String SQL = "SELECT TOP 1* FROM CLIENTE ORDER BY CLIENTEID DESC ";
+
+        try {
+
+            Connection connection = DriverManager.getConnection("jdbc:h2:~/test", "sa", "sa");
+            System.out.println("success in database connection");
+
+            PreparedStatement preparedStatement = connection.prepareStatement(SQL);
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            List<Cliente> clientes = new ArrayList<>();
+
+            while (resultSet.next()) {
+
+                String idCliente = resultSet.getString("ClienteID");
+
+
+                Cliente c = new Cliente(Integer.parseInt(idCliente));
+
+                clientes.add(c);
+
+            }
+            Cliente cli = new Cliente();
+            cli = clientes.get(0);
+
+            System.out.println("success in busca pedido Criado");
+            connection.close();
+            return cli;
+
+        } catch (Exception e) {
+
+            System.out.println("fail in database connection busca pedido Criado");
+            e.getMessage();
+            e.getStackTrace();
+            return new Cliente();
+
         }
     }
 }

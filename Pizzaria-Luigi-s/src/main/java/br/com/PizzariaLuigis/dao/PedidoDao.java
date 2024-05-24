@@ -31,10 +31,10 @@ public class PedidoDao {
             while (resultSet.next()) {
 
                 String id = resultSet.getString("PedidoID");
-                String idCliente = resultSet.getString("ClienteID");
+                //String idCliente = resultSet.getString("ClienteID");
                 String status = resultSet.getString("Status");
 
-                Pedido pedido = new Pedido(Integer.parseInt(id),Integer.parseInt(idCliente),status);
+                Pedido pedido = new Pedido(Integer.parseInt(id),status);
 
                 pedidos.add(pedido);
 
@@ -46,8 +46,9 @@ public class PedidoDao {
 
         } catch (Exception e) {
 
-            System.out.println("fail in database connection");
-
+            System.out.println("fail in buscar pedido");
+            e.getMessage();
+            e.getStackTrace();
             return Collections.emptyList();
 
         }
@@ -101,7 +102,7 @@ public class PedidoDao {
         }
     }
 
-    public static void updatePedido(Pedido pedido, boolean confirmar){
+    public static void updatePedido(Pedido pedido, String status){
         String SQL = "UPDATE PEDIDO SET Status = ? WHERE PedidoID = ?";
 
         try {
@@ -110,10 +111,8 @@ public class PedidoDao {
             System.out.println("success in database connection");
 
             PreparedStatement preparedStatement = con.prepareStatement(SQL);
-            if(confirmar == true)
-                preparedStatement.setString(1,"Pedido Confirmado");
-            else
-                preparedStatement.setString(1,"Pedido Cancelado");
+
+            preparedStatement.setString(1,status);
             preparedStatement.setDouble(2,pedido.getPedidoID());
 
             preparedStatement.execute();
@@ -273,6 +272,32 @@ public class PedidoDao {
             e.getStackTrace();
             return Collections.emptyList();
 
+        }
+    }
+    public static void ConectarPedidoCliente(int pedidoID, int clienteId){
+
+        String SQL = "UPDATE PEDIDO SET CLIENTEID = ? WHERE PEDIDOID = ?";
+
+        try {
+            Connection con = DriverManager.getConnection("jdbc:h2:~/test", "sa","sa");
+
+            System.out.println("success in database connection");
+
+            PreparedStatement preparedStatement = con.prepareStatement(SQL);
+
+            preparedStatement.setInt(1,clienteId);
+            preparedStatement.setInt(2,pedidoID);
+
+            preparedStatement.execute();
+
+            System.out.println("success in update pedido");
+
+            con.close();
+        }
+        catch (Exception e){
+            System.out.println("fail in database connection");
+            e.getMessage();
+            e.getStackTrace();
         }
     }
 }

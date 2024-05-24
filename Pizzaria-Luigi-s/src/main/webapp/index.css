@@ -24,15 +24,7 @@ body {
 }
 
 .texto-branco{
-    color: white;
-}
-
-.cabecalho{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 124px;
-   background: linear-gradient(to right, #ff0101, #490101);
+color:white;
 }
 .cabecalho > h2{
     font-size: 32px;
@@ -42,23 +34,12 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
-}
 
+    background: linear-gradient(to right, #ff0101, #490101);
+
+}
 .cabecalho-alto > a{
     margin: 5px;
-}
-
-.cabecalho-baixo{
-    display: flex;
-    flex-direction: row;
-    background: linear-gradient(to right, #ff0101, #490101);
-}
-
-#texto{
-    display:flex;
-    width: 400px;
-    justify-content: space-evenly;
 }
 
 .introducao{

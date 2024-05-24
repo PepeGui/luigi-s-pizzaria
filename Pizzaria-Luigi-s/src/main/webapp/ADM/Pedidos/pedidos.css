@@ -14,11 +14,10 @@ body{
 background-color: #D7D7D7;
 height: 95vh;
 }
+
 h1{
 display: flex;
 justify-content:center;
-background: linear-gradient(to right, #ff0101, #490101);
-width:100vw;
 }
 
 table{
